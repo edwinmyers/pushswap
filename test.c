@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/10 18:16:31 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/10 18:37:02 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,30 +29,37 @@ void init_list(t_stack * stack)
 	stack->size = 0;
 }
 
-t_stack *quicksort(t_stack *a)
+t_stack *quicksort(t_stack *a, int n)
 {
 	int med;
 	int i;
 	t_stack *b;
 	t_stack *tmp;
-	int len;
+	int len = 0;
 
 	b = malloc(sizeof(t_stack));
 	init_list(b);
 	med = 22;
 	i = 0;
-	if (a->size == 1)
+	if (n == 1)
 		return a;
-	while (i++ < a->size)
+	while (i < n)
 	{
 		if (a->head->data > med)
+		{
+			len++;
 			push(&b, &a);
+		}
 		else
+		{
+			i++;
 			rotate(&a);
+		}
 	}
 	i = 0;
-	// while (i < b->size)
-	// 	push(&a, &b);
+	while (b->size)
+		push(&a, &b);
+	quicksort(a, len);
 	return (a);
 }
 
@@ -78,7 +85,7 @@ int main(int ac, char **av)
 	}
 	stack_b = malloc(sizeof(t_stack));
 	init_list(stack_b);
-	stack_a = quicksort(stack_a);
+	stack_a = quicksort(stack_a, stack_a->size);
 	i = 0;
 	while (i++ < stack_a->size)
 	{
