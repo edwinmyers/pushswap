@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.h                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/10 18:15:18 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 14:56:05 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "Libftprintf/source/ft_printf.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include <unistd.h>
+# include <stdlib.h>
+# include "Libftprintf/source/ft_printf.h"
 
 typedef struct			s_stack_node
 {
@@ -26,6 +29,10 @@ typedef struct			s_stack
     t_st_node *tail;
     int size;
 }						t_stack;
+
+/*
+**          Vice-wra
+*/
 
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 t_st_node	*ft_newnode(int data, size_t data_size);
@@ -42,3 +49,4 @@ void        swap_both(t_stack **stack_a, t_stack **stack_b);
 void        rotate_both(t_stack **stack_a, t_stack **stack_b);
 void        rrotate_both(t_stack **stack_a, t_stack **stack_b);
 
+#endif

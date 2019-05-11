@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_node_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 18:31:03 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/10 18:13:29 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 12:29:53 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "push_swap.h"
 
 t_st_node	*ft_newnode(int data, size_t data_size)
 {

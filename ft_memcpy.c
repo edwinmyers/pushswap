@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 13:14:28 by nparker           #+#    #+#             */
-/*   Updated: 2019/05/07 14:46:17 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 12:29:52 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "push_swap.h"
 
 void		*ft_memcpy(void *dst, const void *src, size_t n)
 {

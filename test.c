@@ -6,22 +6,14 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/10 18:37:02 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 15:23:15 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "test.h"
+#include "push_swap.h"
 
-void ft_swap(int *a, int *b)
-{
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
 void init_list(t_stack * stack)
 {
 	stack->head = NULL;
@@ -29,7 +21,7 @@ void init_list(t_stack * stack)
 	stack->size = 0;
 }
 
-t_stack *quicksort(t_stack *a, int n)
+void quicksort(t_stack **a, int n)
 {
 	int med;
 	int i;
@@ -39,28 +31,36 @@ t_stack *quicksort(t_stack *a, int n)
 
 	b = malloc(sizeof(t_stack));
 	init_list(b);
-	med = 22;
+	med = ((*a)->head->data + (*a)->tail->data) / 2;
 	i = 0;
 	if (n == 1)
-		return a;
+		return ;
 	while (i < n)
 	{
-		if (a->head->data > med)
+		if ((*a)->head->data > med)
 		{
 			len++;
-			push(&b, &a);
+			push(&b, a);
 		}
-		else
-		{
-			i++;
-			rotate(&a);
-		}
+		rotate(a);
+		i++;
 	}
 	i = 0;
+	while (i++ < (n - len))
+		reverse_rotate(a);
 	while (b->size)
-		push(&a, &b);
-	quicksort(a, len);
-	return (a);
+		push(a, &b);
+	if (len > 0)
+		quicksort(a, len);
+	i = 0;
+	while (i++ < len)
+		rotate(a);
+	if (n > len) 
+		quicksort(a, n - len);
+	i = 0;
+	while (i++ < len)
+		reverse_rotate(a);
+	return ;
 }
 
 
@@ -73,7 +73,7 @@ int main(int ac, char **av)
 	int i;
 	void *data;
 
-	int arr[] = {23, 43, 33, 22, 3, 4, 8, 2, 234};
+	int arr[] = {23, 43, 33, 22, 3, 4, 8, 2, 48};
 	stack_a = malloc(sizeof(t_stack));
 	init_list(stack_a);
 	i = 0;
@@ -85,7 +85,7 @@ int main(int ac, char **av)
 	}
 	stack_b = malloc(sizeof(t_stack));
 	init_list(stack_b);
-	stack_a = quicksort(stack_a, stack_a->size);
+	quicksort(&stack_a, stack_a->size);
 	i = 0;
 	while (i++ < stack_a->size)
 	{

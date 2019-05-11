@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 15:28:49 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/10 18:28:56 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 12:28:50 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "push_swap.h"
 
 void push(t_stack **stack_dst, t_stack **stack_src)
 {

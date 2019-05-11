@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   swap_st.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 17:05:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/10 18:14:22 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 12:29:48 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
+#include "push_swap.h"
 
 void    swap_st(t_stack **stack)
 {
