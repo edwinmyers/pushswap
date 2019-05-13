@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/11 14:56:05 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 16:30:17 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void        rotate(t_stack **stack);
 void        reverse_rotate(t_stack **stack);
 void        swap_both(t_stack **stack_a, t_stack **stack_b);
 void        rotate_both(t_stack **stack_a, t_stack **stack_b);
+int         delfromtail(t_stack **alst);
 void        rrotate_both(t_stack **stack_a, t_stack **stack_b);
 
 #endif

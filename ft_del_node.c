@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 14:30:51 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/11 15:23:42 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/11 16:27:20 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,31 +37,26 @@ int ft_del_node(t_stack **alst)
 	return (item);
 }
 
-int delFromTail(List * lp)
+int delfromtail(t_stack **alst)
 {
-	Node * temp;
-	int i = 0;
+	t_st_node *temp;
+	int item;
 
-	int item = 0;
-
-
-	if(lp->tail == NULL)
+	item = 0;
+	if((*alst)->tail == NULL)
 	{	
 		printf("\nList is Empty ..."); 	
 		return -1;
 	}
 	else
 	{
-		temp = lp->head;
-
-		while(temp->next != lp->tail)
-		{ temp = temp->next;}
-
-		item = lp->tail->item;
-
-		lp->tail = temp; 
-		lp->tail->next = NULL;		
-	}	
-
-	return item;
+		temp = (*alst)->head;
+		while(temp->next != (*alst)->tail)
+			temp = temp->next;
+		item = (*alst)->tail->data;
+		(*alst)->tail = temp; 
+		(*alst)->tail->next = NULL;	
+	}
+	(*alst)->size--;
+	return (item);
 }
