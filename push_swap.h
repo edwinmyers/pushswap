@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/11 16:30:17 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/14 16:24:26 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "Libftprintf/source/ft_printf.h"
+
+
+#define a_head (*a)->head->data 
+#define a_head_next (*a)->head->next->data 
+#define a_tail (*a)->tail->data
+#define b_head  b->head->data 
+#define b_head_next  b->head->next->data
+#define b_tail b->tail->data
 
 typedef struct			s_stack_node
 {

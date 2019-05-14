@@ -1,0 +1,55 @@
+// void merge(t_stack **a, t_stack **b)
+// {
+// 	int i;
+
+// 	i = 0;
+	
+// 	if ((*a)->size == 1 && (*b)->size == 1)
+// 	{
+// 		g_kostyl++;
+// 		push(a, b);
+// 		if ((*a)->head->data > (*a)->head->next->data)
+// 		{
+// 			swap_st(a);
+// 			g_kostyl++;
+// 		}
+// 		return ;
+// 	}
+// 	while ((*b)->size)
+// 	{
+// 		while ((*b)->head->data > (*a)->head->data)
+// 		{
+// 			if (i >= (*a)->size)
+// 				break;
+// 			i++;
+// 			g_kostyl++;
+// 			rotate(a);
+// 		}
+// 		push(a, b);
+// 		g_kostyl++;
+// 	}
+// 	while (i--)
+// 	{
+// 		g_kostyl++;
+// 		reverse_rotate(a);
+// 	}
+// }
+
+// void merge_sort(t_stack **a)
+// {
+// 	t_stack *b;
+
+// 	if ((*a)->size < 2)
+// 		return ;
+// 	b = malloc(sizeof(t_stack));
+// 	init_list(b);
+// 	while (b->size <= (*a)->size / 2)
+// 	{
+// 		g_kostyl++;
+// 		push(&b, a);
+// 		ft_printf("pb ");
+// 	}
+// 	merge_sort(a);
+// 	merge_sort(&b);
+// 	merge(a, &b);
+// }
