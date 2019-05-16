@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/14 17:09:31 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/16 18:43:47 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,115 +16,68 @@
 
 int g_kostyl = 0;
 
-void init_list(t_stack * stack)
+void init_list(t_stack *stack)
 {
 	stack->head = NULL;
 	stack->tail = NULL;
 	stack->size = 0;
 }
 
-// void quicksort(t_stack **a, int n)
-// {
-// 	int med;
-// 	int i;
-// 	t_stack *b;
-// 	t_stack *tmp;
-// 	int len = 0;
-
-// 	b = malloc(sizeof(t_stack));
-// 	init_list(b);
-// 	med = ((*a)->head->data + (*a)->tail->data) / 3;
-// 	i = 0;
-// 	if (n == 1)
-// 		return ;
-// 	while (i < n)
-// 	{
-// 		if ((*a)->head->data > med)
-// 		{
-// 			len++;
-// 			push(&b, a);
-// 		}
-// 		else 
-// 			rotate(a);
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i++ < (n - len))
-// 		reverse_rotate(a);
-// 	while (b->size)
-// 		push(a, &b);
-// 	if (len > 0)
-// 		quicksort(a, len);
-// 	i = 0;
-// 	while (i++ < len)
-// 		rotate(a);
-// 	if (n > len) 
-// 		quicksort(a, n - len);
-// 	i = 0;
-// 	while (i++ < len)
-// 		reverse_rotate(a);
-// 	return ;
-// }
-
-void merge(t_stack **a, t_stack **b)
+int find_min(t_stack *a)
 {
-	int i;
+	int min;
+	t_st_node *temp;
+	int pos;
 
-	i = 0;
-	
-	if ((*a)->size == 1 && (*b)->size == 1)
+	pos = 0;
+	temp = a->head;
+	min = temp->data;
+	while (temp)
 	{
-		g_kostyl++;
-		push(a, b);
-		ft_printf("pa ");
-		if (a_head > a_head_next)
+		if (temp->data < min)
 		{
-			swap_st(a);
-			ft_printf("sa ");
-			g_kostyl++;
+			min = temp->data;
+			pos = temp->pos;
 		}
-		return ;
+		temp = temp->next;
 	}
-	while ((*b)->size)
-	{
-		while ((*b)->head->data > (*a)->head->data)
-		{
-			if (i >= (*a)->size)
-				break;
-			i++;
-			g_kostyl++;
-			rotate(a);
-			ft_printf("ra ");
-		}
-		push(a, b);
-		ft_printf("pa ");
-		g_kostyl++;
-	}
-	while (i--)
-	{
-		g_kostyl++;
-		ft_printf("rra ");
-		reverse_rotate(a);
-	}
+	return (pos);
 }
 
-void merge_sort(t_stack **a)
+void min_num_sort(t_stack **a)
 {
 	t_stack *b;
-	int n;
+	int min;
+	int pos;
 	int i;
-	int j;
 
 	i = 0;
-	j = 4;
-	if ((*a)->size < 2)
-		return ;
 	b = malloc(sizeof(t_stack));
 	init_list(b);
-	n = (*a)->size;
-	while ((*a)->size - 1)
+	while (a_size > 3)
 	{
-		i = 0;
+		pos = find_min(*a);
+		min = get_data_at(*a, pos);
+		if (pos > a_size / 2)
+			while (a_head != min)
+			{
+				ft_printf("rra ");
+				reverse_rotate(a);
+				g_kostyl++;
+			}
+		else
+			while (a_head != min)
+			{
+				ft_printf("ra ");
+				rotate(a);
+				g_kostyl++;
+			}
+		push(&b, a);
+		ft_printf("pb ");
+		g_kostyl++;
+	}
+	while (i++ < a_size)
+	{
 		if (a_head > a_head_next)
 		{
 			ft_printf("sa ");
@@ -136,79 +89,15 @@ void merge_sort(t_stack **a)
 			ft_printf("rra ");			
 			reverse_rotate(a);
 			g_kostyl++;
-		}
-		while (a_head < a_head_next)
-		{
-			// while (b->head && a_head < b_head)
-			// {
-			// 	push(a, &b);
-			// 	g_kostyl+=2;
-			// 	ft_printf("pa ");
-			// 	swap_st(a);
-			// 	ft_printf("sa ");
-			// }
-			
-			while (b->head && b_head > a_head)
-			{
-				if (b->size == 1)
-				{
-					push(a, &b);
-					swap_st(a);
-					ft_printf("pa ");
-					ft_printf("sa ");
-					break;
-					g_kostyl+=2;
-				}
-				ft_printf("rb ");
-				g_kostyl++;
-				rotate(&b);
-				i++;
-			}
-			ft_printf("pb ");			
-			push(&b, a);
-			while (i-- > 0)
-			{
-				g_kostyl++;
-				reverse_rotate(&b);	
-			}
-			// if (b->head->next && b_head < b_head_next)
-			// {
-			// 	ft_printf("sb ");
-			// 	swap_st(&b);
-			// 	g_kostyl++;
-			// }
-	
-			g_kostyl++;
-		}
+		}	
 	}
 	while (b->size)
 	{
-		ft_printf("pa ");		
+		ft_printf("pa ");
+		g_kostyl++;	
 		push(a, &b);
-		g_kostyl++;
 	}
-
-
-	
-	
-	// merge_sort(a);
-	
-	// while (b->size < n)
-	// {
-	// 	g_kostyl++;
-	// 	push(&b, a);
-	// 	// rotate(a);
-		
-	// 	ft_printf("pb ");
-	// 	// ft_printf("ra ");
-	// }
-	// merge_sort(a);
-	// merge_sort(&b);
-	// merge(a, &b);
-	
-
 }
-
 
 
 int main(int ac, char **av)
@@ -219,19 +108,25 @@ int main(int ac, char **av)
 	int i;
 	void *data;
 
-	int arr[] = {4, 2, 1, 3, 50, 36, 45, 30, 48, 40};
+	int arr[] = {2, 1, 3, 6, 5, 8, 40, 48, 345,  9, 44, 98, 4935, 3548, -432, 324, 89423, -234, 2334, 213, -345, 0, 867432, 423987, 87534, 132, 94783, 137892, 5987, -23, -435, -1123, 593748, -4435, 95843, 142324, 345089, -1238, 95486, 432897, -4, -3, -1, 99, 444, 8234, -123, 45, 34, 93, 90423, 67, 13278, 5498, 3298, 345, 98, 4389, 498, -84179, 345002, 4382, 493, 84188, 3200, 9830, 8738, 653, 6758, 3917, 3916, 1739, 1362, 7855, 7283, 8432, 66446, 4377, 6642, 94275};
+	// , 30, 48, 345, 40, 9, 44, 98, 4935, 3548};
+	//  40, 9, 44, 98, 4935, 3548, -432, 324, 89423};
+	// , -234, 2334, 213, -345, 0, 867432, 423987, 87534, 132, 94783, 137892, 5987, -23, -435, -1123, 593748, -4435, 95843, 142324, 345089, -1238, 95486};
+	//  -4, -3, -1, 99, 444, 8234, -123, 45, 34, 93, 90423, 67, 13278, 5498, 3298, 345, 98, 4389, 498};
 	stack_a = malloc(sizeof(t_stack));
 	init_list(stack_a);
 	i = 0;
-	while (i < 10)
+	while (i < 80)
 	{
 		ft_lstadd_at_tail(&stack_a, ft_newnode(arr[i], sizeof(int)));
 		i++;
 		// ft_printf("%d ", *(int*)stack_a->tail->data);
 	}
+	
 	stack_b = malloc(sizeof(t_stack));
 	init_list(stack_b);
-	merge_sort(&stack_a);
+	assign_pos(stack_a);
+	min_num_sort(&stack_a);
 	i = 0;
 	while (i++ < stack_a->size)
 	{

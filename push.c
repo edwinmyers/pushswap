@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 15:28:49 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/13 15:43:21 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/16 18:13:15 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void push(t_stack **stack_dst, t_stack **stack_src)
 {
     t_st_node *tmp;
 
-    tmp = ft_newnode((*stack_src)->head->data, sizeof(int));
+    tmp = ft_newnode(ft_del_node(stack_src), sizeof(int));
+    if ((*stack_src)->size) 
+        assign_pos(*stack_src);
     ft_lstadd_at_head(stack_dst, tmp);
-    ft_del_node(stack_src);
+    if ((*stack_dst)->size)
+        assign_pos(*stack_dst);
 }

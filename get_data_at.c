@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_at_tail.c                                :+:      :+:    :+:   */
+/*   get_data_at.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/10 14:20:22 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/16 15:33:28 by vice-wra         ###   ########.fr       */
+/*   Created: 2019/05/16 17:15:03 by vice-wra          #+#    #+#             */
+/*   Updated: 2019/05/16 17:36:23 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_lstadd_at_tail(t_stack **alst, t_st_node *node)
+int get_data_at(t_stack *stack, int pos)
 {
-	if((*alst)->head == NULL)
-	{
-		(*alst)->head = node;
-		(*alst)->tail = node;
-	}
-	else
-	{
-		(*alst)->tail->next = node;
-		(*alst)->tail = (*alst)->tail->next;
-	}
-	(*alst)->size += 1;
+    t_st_node *temp;
+
+    temp = stack->head;
+    while(pos-- > 0)
+        temp = temp->next;
+    return (temp->data);
 }

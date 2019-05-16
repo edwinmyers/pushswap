@@ -6,7 +6,7 @@
 #    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/05/11 17:20:59 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/05/16 17:20:50 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ SOURCE :=	ft_del_node.c\
 			rotate.c\
 			swap_both.c\
 			swap_st.c\
+			assign_pos.c\
+			get_data_at.c\
 			test.c\
 
 OBJECTS := $(SOURCE:.c=.o)

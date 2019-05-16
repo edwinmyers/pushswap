@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_node_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 18:31:03 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/11 12:29:53 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/16 15:31:07 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ t_st_node	*ft_newnode(int data, size_t data_size)
 	node->data = data;
 	node->data_size = data_size;
 	node->next = NULL;
+	node->pos = 0;
 	return (node);
 }

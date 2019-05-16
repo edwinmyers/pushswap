@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 14:30:51 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/11 16:27:20 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/16 18:18:13 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int ft_del_node(t_stack **alst)
 		return (-1);
 	}
 	else if ((*alst)->size == 1)
-	{	
+	{
+		item = (*alst)->head->data;
 		(*alst)->head = NULL;
 		(*alst)->tail = NULL;
 	}
 	else
 	{
 		item = (*alst)->head->data;
-		(*alst)->tail->next = (*alst)->head->next;
 		(*alst)->head = (*alst)->head->next;
 	}
 	(*alst)->size -= 1;		
