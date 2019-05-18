@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_del_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 14:30:51 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/16 18:18:13 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/18 20:00:08 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int ft_del_node(t_stack **alst)
 
     item = 0;
 	if((*alst)->head == NULL)
-	{	
-		ft_printf("\nList is Empty ..."); 	
+	{
+		ft_printf("\nList is Empty ...");
 		return (-1);
 	}
 	else if ((*alst)->size == 1)

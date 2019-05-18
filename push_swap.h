@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/18 17:46:19 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/18 19:55:02 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct			s_stack
 */
 
 void		*ft_memcpy(void *dst, const void *src, size_t n);
-t_st_node	*ft_newnode(int data, size_t data_size);
+t_st_node	*ft_newnode(int data, int orig_pos, size_t data_size);
 void        ft_lstadd_at_head(t_stack **alst, t_st_node *node);
 void		ft_lstadd_at_tail(t_stack **alst, t_st_node *node);
 int         ft_del_node(t_stack **alst);

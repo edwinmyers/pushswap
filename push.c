@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 15:28:49 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/17 17:19:07 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/18 20:03:17 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void push(t_stack **stack_dst, t_stack **stack_src)
 
     if (!*stack_src)
         return ;
-    tmp = ft_newnode(ft_del_node(stack_src), sizeof(int));
+    tmp = ft_newnode(ft_del_node(stack_src), (*stack_src)->head->orig_pos , sizeof(int));
     if ((*stack_src)->size) 
         assign_pos(*stack_src);
     ft_lstadd_at_head(stack_dst, tmp);
