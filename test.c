@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/18 20:06:20 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/20 18:56:29 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ void init_list(t_stack *stack)
 	stack->mid = 0;
 }
 
+void set_kisa(t_stack *stack, int i)
+{
+	t_st_node *temp;
+
+	temp = stack->head;
+	while (i--)
+		temp = temp->next;
+	temp->kisa = 1;
+}
+
 void set_vals(t_stack *orig_stack, t_stack *sorted_stack)
 {
 	t_st_node *node;
@@ -67,6 +77,8 @@ void set_vals(t_stack *orig_stack, t_stack *sorted_stack)
 		curr = curr->next;
 	}
 	sort_pos(orig_stack, sorted_stack);
+	set_kisa(orig_stack, get_pos_by_data(orig_stack, orig_stack->max));
+	set_kisa(orig_stack, get_pos_by_data(orig_stack, orig_stack->mid));
 }
 
 char	terminate(char *str)
@@ -90,10 +102,11 @@ int		main(int argc, char **argv)
 			terminate("OK");
 		sorted_stack = parse_num(argc, argv);
 		min_num_sort(&sorted_stack);
-		set_vals(stack_a, sorted_stack);
 		assign_pos(stack_a);
+		set_vals(stack_a, sorted_stack);
+		kisa_by_value(stack_a);
 		// if (stack_a->size < 70)
-		new_sort(&stack_a);
+		new_sort(&stack_a, &sorted_stack);
 		// else
 		// quick_sort(&stack_a, stack_a->size);
 		// min_num_sort(&stack_a);

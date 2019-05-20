@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_edge.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:05:19 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/18 17:45:03 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/20 18:28:11 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,20 @@ int find_median(t_stack *a, int n)
 	}
 	median = temp->data;
     return (median);
+}
+
+int find_orig_pos(t_stack *a, int orig_pos)
+{
+	t_st_node *tmp;
+
+	tmp = a->head;
+	if (!a || orig_pos == 0)
+		return 0;
+	while (tmp)
+	{
+		if (tmp->orig_pos == (orig_pos + 1) || tmp->orig_pos == (orig_pos - 1))
+			return (tmp->pos);
+		tmp = tmp->next;
+	}
+	return (0);
 }

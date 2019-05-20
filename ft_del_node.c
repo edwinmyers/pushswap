@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 14:30:51 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/18 20:00:08 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/20 12:37:05 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_del_node(t_stack **alst)
     int item;
 
     item = 0;
-	if((*alst)->head == NULL)
+	if ((*alst)->head == NULL)
 	{
 		ft_printf("\nList is Empty ...");
 		return (-1);
@@ -33,7 +33,7 @@ int ft_del_node(t_stack **alst)
 		item = (*alst)->head->data;
 		(*alst)->head = (*alst)->head->next;
 	}
-	(*alst)->size -= 1;		
+	(*alst)->size -= 1;
 	return (item);
 }
 

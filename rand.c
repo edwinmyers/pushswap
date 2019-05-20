@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rand.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 14:20:56 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/18 17:46:34 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/20 19:11:34 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <time.h>
 #include <stdio.h>
 
-#define MAS 10
+#define MAS 100
 #define MAXP 500
 #define MINP 0
 

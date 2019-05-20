@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_node_new.c                                      :+:      :+:    :+:   */
+/*   keep_in_stack_a.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/07 18:31:03 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/20 17:45:55 by nparker          ###   ########.fr       */
+/*   Created: 2019/05/20 14:45:51 by nparker           #+#    #+#             */
+/*   Updated: 2019/05/20 18:51:07 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_st_node	*ft_newnode(int data, size_t data_size)
+void kisa_by_value(t_stack *stack)
 {
-	t_st_node *node;
+    t_st_node *curr;
+    t_st_node *node;
+    int val;
 
-	node = (t_st_node*)malloc(sizeof(t_st_node));
-	if (node == NULL)
-		return (NULL);
-	node->data = data;
-	node->data_size = data_size;
-	node->next = NULL;
-	node->pos = 0;
-	node->orig_pos = 0;
-	node->kisa = 0;
-	return (node);
+    curr = stack->head;
+    node = stack->head;
+    val = stack->min;
+    while (node->data != val)
+        node = node->next;
+    node->kisa = 1;
+    while (node)
+    {
+        if (val < node->data)
+        {
+            node->kisa = 1;
+            val = node->data;
+        }     
+        node = node->next;
+    }
 }
+
+
+// void kisa_by_value()

@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/18 19:55:02 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/20 18:50:59 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct			s_stack_node
 	int data_size;
 	int pos;
 	int orig_pos;
+	short kisa;
 }						t_st_node;
 
 typedef struct			s_stack
@@ -50,11 +51,12 @@ typedef struct			s_stack
 */
 
 void		*ft_memcpy(void *dst, const void *src, size_t n);
-t_st_node	*ft_newnode(int data, int orig_pos, size_t data_size);
+t_st_node	*ft_newnode(int data, size_t data_size);
 void        ft_lstadd_at_head(t_stack **alst, t_st_node *node);
 void		ft_lstadd_at_tail(t_stack **alst, t_st_node *node);
 int         ft_del_node(t_stack **alst);
-void        push(t_stack **stack_a, t_stack **stack_b);
+void		push(t_stack **stack_dst, t_stack **stack_src);
+void		push_with_pos(t_stack **stack_dst, t_stack **stack_src, t_stack **sorted_stack);
 void        swap_st(t_stack **stack);
 void        rotate(t_stack **stack);
 void        reverse_rotate(t_stack **stack);
@@ -78,7 +80,10 @@ void		min_num_sort(t_stack **a);
 int			find_median(t_stack *a, int n);
 void		quick_sort(t_stack **a, int n);
 void		sort_last_three(t_stack **a);
-void		new_sort(t_stack **a);
-
+void		new_sort(t_stack **a, t_stack **sorted_stack);
+void		sort_pos(t_stack *orig_stack, t_stack *sort_stack);
+int			find_orig_pos(t_stack *a, int orig_pos);
+void		kisa_by_value(t_stack *stack);
+int			get_pos_by_data(t_stack *stack, int data);
 
 #endif
