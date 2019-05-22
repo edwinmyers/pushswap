@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/20 18:56:29 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/22 14:48:22 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ void set_vals(t_stack *orig_stack, t_stack *sorted_stack)
 		curr = curr->next;
 	}
 	sort_pos(orig_stack, sorted_stack);
-	set_kisa(orig_stack, get_pos_by_data(orig_stack, orig_stack->max));
-	set_kisa(orig_stack, get_pos_by_data(orig_stack, orig_stack->mid));
 }
 
 char	terminate(char *str)

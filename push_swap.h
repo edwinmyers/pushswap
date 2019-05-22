@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/20 18:50:59 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/22 15:58:58 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,13 @@
 #define a_head_next (*a)->head->next->data 
 #define a_tail (*a)->tail->data
 #define a_size (*a)->size
+#define a_orig_pos (*a)->head->orig_pos
+#define a_count (*a)->head->count
 #define b_head  b->head->data 
 #define b_head_next  b->head->next->data
 #define b_tail b->tail->data
+#define b_orig_pos b->head->orig_pos
+#define b_count b->head->count
 
 typedef struct			s_stack_node
 {
@@ -33,6 +37,7 @@ typedef struct			s_stack_node
 	int data_size;
 	int pos;
 	int orig_pos;
+	int count;
 	short kisa;
 }						t_st_node;
 
@@ -51,9 +56,9 @@ typedef struct			s_stack
 */
 
 void		*ft_memcpy(void *dst, const void *src, size_t n);
-t_st_node	*ft_newnode(int data, size_t data_size);
 void        ft_lstadd_at_head(t_stack **alst, t_st_node *node);
 void		ft_lstadd_at_tail(t_stack **alst, t_st_node *node);
+t_st_node	*ft_newnode(int data, size_t data_size, int orig_pos);
 int         ft_del_node(t_stack **alst);
 void		push(t_stack **stack_dst, t_stack **stack_src);
 void		push_with_pos(t_stack **stack_dst, t_stack **stack_src, t_stack **sorted_stack);
@@ -85,5 +90,10 @@ void		sort_pos(t_stack *orig_stack, t_stack *sort_stack);
 int			find_orig_pos(t_stack *a, int orig_pos);
 void		kisa_by_value(t_stack *stack);
 int			get_pos_by_data(t_stack *stack, int data);
+t_st_node	*get_node_by_pos(t_stack *stack, int pos);
+void set_count_by_currpos(t_stack *stack, int pos, int count);
+void set_count_by_orig_pos(t_stack *stack, int pos, int count);
+int get_count_by_origpos(t_stack *stack, int pos);
+t_st_node *get_node_by_origpos(t_stack *stack, int pos);
 
 #endif

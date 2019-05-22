@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nparker <nparker@student.42.fr>            +#+  +:+       +#+         #
+#    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/05/20 14:50:20 by nparker          ###   ########.fr        #
+#    Updated: 2019/05/22 15:48:01 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,9 @@ SOURCE :=	ft_del_node.c\
 			quick_sort.c\
 			new_sort.c\
 			keep_in_stack_a.c\
+			get_node.c\
+			set_count.c\
+			get_count.c\
 			test.c\
 
 OBJECTS := $(SOURCE:.c=.o)

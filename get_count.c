@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   get_count.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/10 14:26:43 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/22 15:31:02 by vice-wra         ###   ########.fr       */
+/*   Created: 2019/05/22 15:46:26 by vice-wra          #+#    #+#             */
+/*   Updated: 2019/05/22 16:00:45 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rotate(t_stack **stack)
+int get_count_by_origpos(t_stack *stack, int pos)
 {
-    t_st_node *tmp;
+    t_st_node *temp;
 
-    tmp = ft_newnode((*stack)->head->data, sizeof(int), (*stack)->head->orig_pos);
-    (*stack)->head = (*stack)->head->next;
-    ft_lstadd_at_tail(stack, tmp);
-    (*stack)->size--;
-    assign_pos(*stack);
+    temp = stack->head;
+    while (temp && temp->orig_pos != pos)
+        temp = temp->next;
+    if (temp)
+        return (temp->count);
+    else
+        return (-1);
 }

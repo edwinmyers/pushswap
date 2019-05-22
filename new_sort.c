@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   new_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/20 19:12:43 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/22 18:17:48 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,74 +32,43 @@ static void		first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 		}
 		else
 		{
-			push_with_pos(&b, &a, &sorted_stack);
+			push(&b, &a);
 			g_kosty += 1;
-			ft_printf("pa ");
+			ft_printf("pb ");
 		}
 	}
+
 }
 
 
 void	new_sort(t_stack **a, t_stack **sorted_stack)
 {
 	t_stack *b;
-	int i;
-	
-	i = 0;
+	int count;
+	int rot_count;
+
+	rot_count = 0;
+	count = 0;
 	b = malloc(sizeof(t_stack));
 	init_list(b);
 	first_three(*a, b, *sorted_stack);
 	while (b->size)
 	{
-		if (b_head < a_head && b_head > a_tail)
-		{
-			ft_printf("pa ");
-			push_with_pos(a, &b, sorted_stack);
-			g_kosty += 1;
-		}
-		else if (b->size > 1 && b_head_next < a_head && b_head_next > a_tail)
-		{
-			ft_printf("sb ");
-			ft_printf("pa ");
-			swap_st(&b);
-			push_with_pos(a, &b, sorted_stack);
-			g_kosty += 2;
-		}
-		else if (b_tail < a_head && b_tail > a_tail)
-		{
-			ft_printf("rrb ");
-			ft_printf("pa ");
-			reverse_rotate(&b);
-			push_with_pos(a, &b, sorted_stack);
-			g_kosty += 2;
-		}
-		else
-		{
-			
-			ft_printf("ra ");
+		if (a_orig_pos == 0)
 			rotate(a);
-			g_kosty += 1;
-		}
-		// else if (find_orig_pos(*a, b->head->orig_pos) > a_size / 2)
-		// {
-		// 	ft_printf("rra ");
-		// 	reverse_rotate(a);
-		// 	g_kosty += 1;
-		// }
-	}
-	if (find_min(*a, &(*a)->min, a_size) > a_size / 2)
-		while (find_min(*a, &(*a)->min, a_size) != 0)
+		else if (get_node_by_origpos(*a, b_orig_pos + 1) && a_orig_pos == b_orig_pos + 1)
+			push(a, &b);
+		else 
 		{
-			ft_printf("rra ");			
-			reverse_rotate(a);
-			g_kosty += 1;
+			if (rot_count > b->size)
+				break;
+			rotate(&b);
+			rot_count++;
+			set_count_by_orig_pos(b, a_orig_pos - 1, get_count_by_origpos(b, a_orig_pos - 1) + 1);
 		}
-	else
-		while (find_min(*a, &(*a)->min, a_size) != 0)
-		{
-			ft_printf("ra ");
-			rotate(a);
-			g_kosty += 1;
-		}
-		ft_printf("\n|new_sort : %d |\n", g_kosty);
+		
+	}	
+
+
+
 }

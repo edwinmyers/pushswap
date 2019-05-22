@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:12:42 by nparker           #+#    #+#             */
-/*   Updated: 2019/05/20 18:11:10 by nparker          ###   ########.fr       */
+/*   Updated: 2019/05/22 15:36:34 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void		parse_arr(t_stack *stack, int argc, char **argv)
 	{
 		if (ft_isint(argv[i]) == -1 || ft_ischar(argv[i]) == 1)
 			terminate("Error_is_not_integer");
-		ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(argv[i]), sizeof(int)));
+		ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(argv[i]), sizeof(int), 0));
 		i++;
 	}
 }
@@ -37,7 +37,7 @@ static void		parse_str(t_stack *stack, char *str)
 	{
 		if (ft_isint(num[i]) == -1 || ft_ischar(num[i]) == 1)
 			terminate("Error_is_not_integer");
-		ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(num[i]), sizeof(int)));
+		ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(num[i]), sizeof(int), 0));
 		i++;
 	}
 	ft_free2dmass(num, i);
