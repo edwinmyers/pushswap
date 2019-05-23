@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/22 14:48:22 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/23 17:54:02 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void set_vals(t_stack *orig_stack, t_stack *sorted_stack)
 	node = orig_stack->head;
 	orig_stack->max = sorted_stack->tail->data;
 	orig_stack->min = sorted_stack->head->data;
-	orig_stack->mid = get_data_at(sorted_stack, sorted_stack->size / 2);
+	orig_stack->mid = get_data_at(sorted_stack, (sorted_stack->size / 2)- 1);
 	while (sorted_stack->size && curr != NULL)
 	{
 		curr->orig_pos = i;
@@ -102,9 +102,9 @@ int		main(int argc, char **argv)
 		min_num_sort(&sorted_stack);
 		assign_pos(stack_a);
 		set_vals(stack_a, sorted_stack);
-		kisa_by_value(stack_a);
+		kisa(stack_a);
 		// if (stack_a->size < 70)
-		new_sort(&stack_a, &sorted_stack);
+		quick_sort(&stack_a, stack_a->size);
 		// else
 		// quick_sort(&stack_a, stack_a->size);
 		// min_num_sort(&stack_a);

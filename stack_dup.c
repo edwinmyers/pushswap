@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   stack_dup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/10 17:33:28 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/23 16:35:45 by vice-wra         ###   ########.fr       */
+/*   Created: 2019/05/23 17:40:05 by vice-wra          #+#    #+#             */
+/*   Updated: 2019/05/23 17:56:13 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void reverse_rotate(t_stack **stack)
+t_stack *stack_dup(t_stack *src)
 {
-    t_st_node *tmp;
+    t_stack *new;
+    t_st_node *temp;
 
-    if (!(*stack)->tail)
-        return ;
-    tmp = (*stack)->tail;
-    ft_lstadd_at_head(stack, tmp);
-    delfromtail(stack);
-    assign_pos(*stack);
+    temp = src->head;
+    new = malloc(sizeof(t_stack));
+    init_list(new);
+    while (temp)
+    {
+        ft_lstadd_at_tail(&new, ft_newnode(temp->data, sizeof(int), temp->orig_pos));
+        temp = temp->next;
+    }
+    return(new);
 }

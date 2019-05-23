@@ -6,7 +6,7 @@
 #    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/05/22 15:48:01 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/05/23 17:46:55 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SOURCE :=	ft_del_node.c\
 			get_node.c\
 			set_count.c\
 			get_count.c\
+			stack_dup.c\
 			test.c\
 
 OBJECTS := $(SOURCE:.c=.o)

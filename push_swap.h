@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/22 15:58:58 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/23 17:45:39 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 # include "Libftprintf/libft/libft.h"
 
 
-#define a_head (*a)->head->data 
-#define a_head_next (*a)->head->next->data 
-#define a_tail (*a)->tail->data
+#define a_head (*a)->head
+#define a_next (*a)->head->next 
+#define a_tail (*a)->tail
 #define a_size (*a)->size
 #define a_orig_pos (*a)->head->orig_pos
 #define a_count (*a)->head->count
-#define b_head  b->head->data 
-#define b_head_next  b->head->next->data
-#define b_tail b->tail->data
+#define b_head  b->head
+#define b_next  b->head->next
+#define b_tail b->tail
 #define b_orig_pos b->head->orig_pos
 #define b_count b->head->count
 
@@ -82,18 +82,19 @@ t_stack		*parse_num(int argc, char **argv);
 long long   ft_strtoll(const char *str);
 void		init_list(t_stack *stack);
 void		min_num_sort(t_stack **a);
-int			find_median(t_stack *a, int n);
+int find_median(t_stack *a);
 void		quick_sort(t_stack **a, int n);
 void		sort_last_three(t_stack **a);
 void		new_sort(t_stack **a, t_stack **sorted_stack);
 void		sort_pos(t_stack *orig_stack, t_stack *sort_stack);
 int			find_orig_pos(t_stack *a, int orig_pos);
-void		kisa_by_value(t_stack *stack);
 int			get_pos_by_data(t_stack *stack, int data);
 t_st_node	*get_node_by_pos(t_stack *stack, int pos);
 void set_count_by_currpos(t_stack *stack, int pos, int count);
 void set_count_by_orig_pos(t_stack *stack, int pos, int count);
 int get_count_by_origpos(t_stack *stack, int pos);
 t_st_node *get_node_by_origpos(t_stack *stack, int pos);
+void kisa(t_stack *stack);
+t_stack *stack_dup(t_stack *src);
 
 #endif

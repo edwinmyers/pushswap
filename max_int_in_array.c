@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   max_int_in_array.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/10 17:33:28 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/23 16:35:45 by vice-wra         ###   ########.fr       */
+/*   Created: 2019/05/23 15:51:10 by vice-wra          #+#    #+#             */
+/*   Updated: 2019/05/23 15:54:17 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void reverse_rotate(t_stack **stack)
+int maxnb_inarr(int *arr, int size)
 {
-    t_st_node *tmp;
+    int max;
+    int i;
 
-    if (!(*stack)->tail)
-        return ;
-    tmp = (*stack)->tail;
-    ft_lstadd_at_head(stack, tmp);
-    delfromtail(stack);
-    assign_pos(*stack);
+    i = 0;
+    max = arr[0];
+    while (size-- > 0)
+    {
+        if (arr[i] > max)
+            max = arr[i];
+    }
+
+
 }
