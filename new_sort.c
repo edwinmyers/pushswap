@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/26 19:31:48 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/26 19:52:59 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,60 +18,32 @@ int g_kosty = 0;
 
 static void		first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 {
-	while (a->size != 3)
+	int count;
+	int i;
+
+	i = 0;
+	count = 0;
+	while (a->size)
 	{
-		if (a->head->data != a->max && a->head->data != a->min && a->head->data != a->mid)
+		if (a->head->kisa == 1)
 		{
-			ft_printf("pb ");
-			push(&b, &a);
-			g_kosty += 1;
+			if (i > a->size)
+				break;
+			rotate(&a);
+			count++;
+			a->tail->kisa = 1;
+			i++;
+			g_kosty++;
 		}
 		else
 		{
-			ft_printf("ra ");
-			rotate(&a);	
-			g_kosty += 1;
+			count++;
+			push(&b, &a);
+			g_kosty++;
 		}
 	}
-	if (a->head->data == a->max && a->head->next->data == a->mid)
-	{	
-		swap_st(&a);
-		ft_printf("sa ");
-		g_kosty += 1;
-	}
-	else if (a->head->data == a->min && a->head->next->data == a->max)
-	{
-		ft_printf("sa ");
-		ft_printf("rra ");
-		swap_st(&a);
-		reverse_rotate(&a);
-		g_kosty += 2;
-	}
-	else if (a->head->data == a->mid && a->head->next->data == a->min)
-	{
-		ft_printf("sa ");
-		ft_printf("ra ");
-		swap_st(&a);
-		rotate(&a);
-		g_kosty += 2;
-	}
-	else if (a->head->data == a->max && a->head->next->data == a->min)
-	{
-		ft_printf("rra ");
-		reverse_rotate(&a);
-		g_kosty += 1;
-	}
-	else if (a->head->data == a->min && a->head->next->data == a->mid)
-	{
-		ft_printf("ra ");
-		rotate(&a);
-		g_kosty += 1;
-	}
+	pf("\n COUNT : %d\n", count);
 }
-
-
-
-
 
 void	new_sort(t_stack **a, t_stack **sorted_stack)
 {
