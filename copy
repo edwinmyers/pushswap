@@ -370,7 +370,7 @@ while (a->size != 3)
 			rotate(a);
 			g_kosty += 1;
 		}
-		// else if (find_orig_pos(*a, b->head->orig_pos) > a_size / 2)
+		// else if (find_sort_pos(*a, b->head->sort_pos) > a_size / 2)
 		// {
 		// 	ft_printf("rra ");
 		// 	reverse_rotate(a);

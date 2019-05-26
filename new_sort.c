@@ -6,100 +6,145 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/23 17:28:46 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/26 19:31:48 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int kost = 0;
+int g_kosty = 0;
 
 
 
 static void		first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 {
-	t_st_node *tmp;
-	int size;
-	int i;
-	size = a->size;
-	tmp = a->head;
-	
-	while (size--)
+	while (a->size != 3)
 	{
-		if (a->head->kisa == 1)
+		if (a->head->data != a->max && a->head->data != a->min && a->head->data != a->mid)
 		{
-			rotate(&a);
-			kost += 1;
-			ft_printf("ra ");
+			ft_printf("pb ");
+			push(&b, &a);
+			g_kosty += 1;
 		}
 		else
 		{
-			push(&b, &a);
-			kost += 1;
-			ft_printf("pb ");
+			ft_printf("ra ");
+			rotate(&a);	
+			g_kosty += 1;
 		}
+	}
+	if (a->head->data == a->max && a->head->next->data == a->mid)
+	{	
+		swap_st(&a);
+		ft_printf("sa ");
+		g_kosty += 1;
+	}
+	else if (a->head->data == a->min && a->head->next->data == a->max)
+	{
+		ft_printf("sa ");
+		ft_printf("rra ");
+		swap_st(&a);
+		reverse_rotate(&a);
+		g_kosty += 2;
+	}
+	else if (a->head->data == a->mid && a->head->next->data == a->min)
+	{
+		ft_printf("sa ");
+		ft_printf("ra ");
+		swap_st(&a);
+		rotate(&a);
+		g_kosty += 2;
+	}
+	else if (a->head->data == a->max && a->head->next->data == a->min)
+	{
+		ft_printf("rra ");
+		reverse_rotate(&a);
+		g_kosty += 1;
+	}
+	else if (a->head->data == a->min && a->head->next->data == a->mid)
+	{
+		ft_printf("ra ");
+		rotate(&a);
+		g_kosty += 1;
 	}
 }
 
 
-	void	new_sort(t_stack **a, t_stack **sorted_stack)
+
+
+
+void	new_sort(t_stack **a, t_stack **sorted_stack)
 {
 	t_stack *b;
 	int i;
-	
-	i = 0;
+	int pos;
+	int rot;
+
 	b = malloc(sizeof(t_stack));
 	init_list(b);
 	first_three(*a, b, *sorted_stack);
-
 	while (b->size)
 	{
-		if (b_orig_pos > b_tail->orig_pos)
+		i = 0;
+		count_rotops(b);
+		allign(*a, b);
+		pos = find_min_ops(b);
+		rot = get_rot(b, pos);
+		while (b->head && i++ < pos)
 		{
-			kost++;
-			reverse_rotate(&b);
+			if (rot == 1)
+			{
+				ft_printf("rb ");
+				g_kosty++;
+				b->head->count--;
+				rotate(&b);
+			}
+			else if (rot == 2)
+			{
+				ft_printf("rrb ");
+				b->head->count--;
+				g_kosty++;
+				reverse_rotate(&b);
+			}
+			count_rotops(b);
+			allign(*a, b);
+			pos = find_min_ops(b);
 		}
-		else if (b_orig_pos < a_orig_pos)
-		{
-			kost++;
-			push(a, &b);
-		}
-		else if (b->size > 1 && b_next->orig_pos < a_orig_pos)
-		{
-			kost++;
-			swap_st(&b);
-		}
-		else if (b_orig_pos < a_next->orig_pos)
-		{
-			kost+=2;
-			push(a, &b);
-			swap_st(a);
-		}
-		// else if (b_orig_pos > a_tail->orig_pos)
-		// {
-		// 	push(a, &b);
-		// 	rotate(a);
-		// 	kost+=2;
-		// }
-		else 
-			rotate(a);
-	
+		rot = get_rot(*a, b->head->neighb_pos);
+		i = 0;
+		b_head->count--;
+		while (i++ < b_head->count)
+			if (rot == 1)
+			{
+				pf("ra ");
+				g_kosty++;
+				rotate(a);
+			}
+			else
+			{
+				pf("rra ");
+				reverse_rotate(a);
+				g_kosty++;
+			}
+		pf("pa ");
+		g_kosty++;
+		push(a, &b);
 	}
 	if (find_min(*a, &(*a)->min, a_size) > a_size / 2)
 		while (find_min(*a, &(*a)->min, a_size) != 0)
 		{
 			ft_printf("rra ");			
 			reverse_rotate(a);
-			kost += 1;
+			g_kosty += 1;
 		}
 	else
 		while (find_min(*a, &(*a)->min, a_size) != 0)
 		{
 			ft_printf("ra ");
 			rotate(a);
-			kost += 1;
+			g_kosty += 1;
 		}
-		ft_printf("\n|new_sort : %d |\n", kost);
-	// if (!check_sort(*a))
-	// 	exit(EXIT_FAILURE);
+	ft_printf("\n|new_sort : %d |\n", g_kosty);
+
+
 }

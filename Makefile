@@ -6,7 +6,7 @@
 #    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/05/23 17:46:55 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/05/26 18:15:43 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJ_DIR := objects/
 SOURCE :=	ft_del_node.c\
 			ft_lstadd_at_head.c\
 			ft_lstadd_at_tail.c\
-			ft_node_new.c\
+			ft_newnode.c\
 			push.c\
 			reverse_rotate_both.c\
 			reverse_rotate.c\
@@ -49,6 +49,10 @@ SOURCE :=	ft_del_node.c\
 			set_count.c\
 			get_count.c\
 			stack_dup.c\
+			set_rot.c\
+			get_rot.c\
+			count_ops.c\
+			get_pos_by_sortpos.c\
 			test.c\
 
 OBJECTS := $(SOURCE:.c=.o)

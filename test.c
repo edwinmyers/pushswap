@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/23 17:54:02 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/26 15:55:21 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void			sort_pos(t_stack *orig_stack, t_stack *sort_stack)
 		while (curr_j != NULL)
 		{
 			if (curr_i->data == curr_j->data)
-				curr_i->orig_pos = curr_j->orig_pos;
+				curr_i->sort_pos = curr_j->sort_pos;
 			curr_j = curr_j->next;
 		}
 		i++;
@@ -72,7 +72,7 @@ void set_vals(t_stack *orig_stack, t_stack *sorted_stack)
 	orig_stack->mid = get_data_at(sorted_stack, (sorted_stack->size / 2)- 1);
 	while (sorted_stack->size && curr != NULL)
 	{
-		curr->orig_pos = i;
+		curr->sort_pos = i;
 		++i;
 		curr = curr->next;
 	}
@@ -90,10 +90,13 @@ int		main(int argc, char **argv)
 	int	i;
 	t_stack	*stack_a;
 	t_stack *sorted_stack;
+	t_stack *stack_b;
 
 	i = 0;
 	if (argc >= 2)
 	{
+		stack_b = malloc(sizeof(t_stack));
+		init_list(stack_b);
 		stack_a = parse_num(argc, argv);
 		check_dup(stack_a);
 		if (check_sort(stack_a))
@@ -104,7 +107,7 @@ int		main(int argc, char **argv)
 		set_vals(stack_a, sorted_stack);
 		kisa(stack_a);
 		// if (stack_a->size < 70)
-		quick_sort(&stack_a, stack_a->size);
+		new_sort(&stack_a, &sorted_stack);
 		// else
 		// quick_sort(&stack_a, stack_a->size);
 		// min_num_sort(&stack_a);
@@ -113,6 +116,7 @@ int		main(int argc, char **argv)
 			ft_printf("%d ", stack_a->head->data);
 			stack_a->head = stack_a->head->next;
 		}
+		
 	}
 	else
 		terminate("usage: ./push_swap ...");

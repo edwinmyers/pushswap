@@ -6,42 +6,60 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:13:27 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/23 18:01:37 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/25 17:16:00 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+int kostyan = 0;
 
-void quick_sort(t_stack **a, int n)
+void quick_sort(t_stack **a, t_stack **b, int n, int flag)
 {
-	t_stack *b;
 	int i;
 	int median;
-	int len;
-	int rot;
 
 	if (n < 2)
 		return ;
 	i = 0;
-	rot = 0;
-	len = 0;
 	median = find_median(*a);
+	i = 0;
+	n = a_size;
 	while (i++ < n)
 	{
 		if (a_head->data <= median)
 		{
-			len++;
-			push(&b, a);
+			push(b, a);
 			ft_printf("pb ");
+			kostyan++;
 		}
 		else
 		{
+			kostyan++;
 			ft_printf("ra ");
-			rot++;
 			rotate(a); 
 		}
 	}
-    quick_sort(a, a_size);
-	quick_sort(&b, b->size);
-	
+	i = 0;
+	n = (*b)->size;
+	median = find_median(*b);
+	while (i++ < n)
+	{
+		if ((*b)->head->data <= median)
+		{
+			kostyan++;
+			push(a, b);
+			ft_printf("pa ");
+		}
+		else
+		{
+			ft_printf("rb ");
+			rotate(b);
+			kostyan++; 
+		}
+	}
+	while ((*b)->size)
+		push(a, b);
+	if (!check_sort(*a))
+		quick_sort(a, b, a_size, 1);
+	ft_printf("\n|QuickSort: %d|\n", kostyan);
 }

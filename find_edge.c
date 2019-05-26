@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:05:19 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/23 17:59:26 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/26 15:31:59 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,22 +61,22 @@ int find_median(t_stack *a)
 
 	temp = stack_dup(a);
 	min_num_sort(&temp);
-	mid = get_data_at(temp, temp->size / 2 - (temp->size % 2 > 0 ? 0 : 1));
+	mid = get_data_at(temp, (temp->size / 2) - 1);
 	free(temp);
 	return (mid);
 	
 }
 
-int find_orig_pos(t_stack *a, int orig_pos)
+int find_sort_pos(t_stack *a, int sort_pos)
 {
 	t_st_node *tmp;
 
 	tmp = a->head;
-	if (!a || orig_pos == 0)
+	if (!a || sort_pos == 0)
 		return 0;
 	while (tmp)
 	{
-		if (tmp->orig_pos == (orig_pos + 1) || tmp->orig_pos == (orig_pos - 1))
+		if (tmp->sort_pos == (sort_pos + 1) || tmp->sort_pos == (sort_pos - 1))
 			return (tmp->pos);
 		tmp = tmp->next;
 	}

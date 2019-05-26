@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 15:28:49 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/23 14:18:21 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/26 15:03:29 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void			push(t_stack **stack_dst, t_stack **stack_src)
 
 	if (!(*stack_src)->head)
 		return ;
-	tmp = ft_newnode((*stack_src)->head->data, sizeof(int), (*stack_src)->head->orig_pos);
+	tmp = ft_newnode((*stack_src)->head->data, sizeof(int), (*stack_src)->head->sort_pos);
 	ft_del_node(stack_src);
 	if ((*stack_src)->size) 
 		assign_pos(*stack_src);

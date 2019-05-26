@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:45:51 by nparker           #+#    #+#             */
-/*   Updated: 2019/05/23 17:13:46 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/26 15:03:29 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ int            kisa_by_index(t_stack **stack, int pos, int flag)
         node = node->next;
     while(node)
     {
-        if (node->orig_pos == (index + 1))
+        if (node->sort_pos == (index + 1))
         {
             node->kisa = flag ? 1 : 0;
-            index = node->orig_pos;
+            index = node->sort_pos;
             iter++;
         }
         node = node->next;
@@ -76,8 +76,8 @@ void kisa(t_stack *stack)
     max = 0;
     while (i < (stack->size / 2) + 1)
     {
-       kisa_by_index(&stack, i, 0) > max ? (max = kisa_by_index(&stack, i, 0), j++) : max;
-       kisa_by_value(&stack, i, 0) > max ? max = kisa_by_value(&stack, i, 0), k++ : max;
+      max = kisa_by_index(&stack, i, 0) > max ? kisa_by_index(&stack, i, 0), j++ : max;
+       max = kisa_by_value(&stack, i, 0) > max ? kisa_by_value(&stack, i, 0), k++ : max;
         i++;
     }
     j > k ? kisa_by_index(&stack, j - 1, 1) : kisa_by_value(&stack, k - 1, 1);
