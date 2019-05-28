@@ -6,7 +6,7 @@
 #    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/05/26 18:15:43 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/05/28 14:51:33 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,9 @@ SOURCE :=	ft_del_node.c\
 			get_rot.c\
 			count_ops.c\
 			get_pos_by_sortpos.c\
+			get_neighb_by_pos.c\
+			set_rev.c\
+			get_rev.c\
 			test.c\
 
 OBJECTS := $(SOURCE:.c=.o)

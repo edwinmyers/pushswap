@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 14:57:55 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/26 15:51:48 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/28 12:43:17 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void set_rot(t_stack *a, int pos, int rot)
     node = a->head;
     while (node && node->pos != pos)
         node = node->next;
-    node->rot = rot;
+    if (node)
+        node->rot = rot;
 }

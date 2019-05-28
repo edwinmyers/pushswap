@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/26 18:15:03 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/28 16:05:04 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ typedef struct			s_stack_node
 	int sort_pos;
 	int count;
 	int rot;
-	short neighb_pos;
+	int rev;
+	int rrr;
+	int rr;
+	int neighb_pos;
 	short kisa;
 }						t_st_node;
 
@@ -104,5 +107,8 @@ void allign(t_stack *a, t_stack *b);
 int				find_min_ops(t_stack *b);
 int get_rot(t_stack *a, int pos);
 int get_pos_by_sortpos(t_stack *a, int sort_pos);
+int get_neighb_by_pos(t_stack *a, int pos);
+void set_rev(t_stack *a, int pos, int rev);
+int get_rev(t_stack *a, int pos);
 
 #endif

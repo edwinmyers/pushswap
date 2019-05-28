@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:02:35 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/26 19:32:03 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/28 15:07:39 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ void min_num_sort(t_stack **a)
 		// ft_printf("pa ");
 		push(a, &b);
 	}
-	// ft_printf("\n|min_sort: %d|\n", g_kostyl);
+	ft_printf("\n|min_sort: %d|\n", g_kostyl);
 }

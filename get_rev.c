@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   get_rev.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/07 18:31:03 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/28 16:06:25 by vice-wra         ###   ########.fr       */
+/*   Created: 2019/05/28 14:50:14 by vice-wra          #+#    #+#             */
+/*   Updated: 2019/05/28 14:51:34 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_st_node	*ft_newnode(int data, size_t data_size, int sort_pos)
+int get_rev(t_stack *a, int pos)
 {
-	t_st_node *node;
+    t_st_node *node;
 
-	node = (t_st_node*)malloc(sizeof(t_st_node));
-	if (node == NULL)
-		return (NULL);
-	node->data = data;
-	node->data_size = data_size;
-	node->next = NULL;
-	node->pos = 0;
-	node->sort_pos = sort_pos;
-	node->kisa = 0;
-	node->count = 0;
-	node->rot = 0;
-	node->rev = 0;
-	node->neighb_pos = 0;
-	node->rrr = 0;
-	node->rr = 0;
-	return (node);
+    node = a->head;
+    while (node && node->pos != pos)
+        node = node->next;
+    if (node)
+        return (node->rev);
+    return (-1);
 }

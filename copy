@@ -395,3 +395,45 @@ while (a->size != 3)
 	// if (!check_sort(*a))
 	// 	exit(EXIT_FAILURE);
 }
+
+
+
+	while (b->head && i++ < pos)
+		{
+			if (rot == 1)
+			{
+				ft_printf("rb ");
+				g_kosty++;
+				b->head->count--;
+				rotate(&b);
+			}
+			else if (rot == 2)
+			{
+				ft_printf("rrb ");
+				b->head->count--;
+				g_kosty++;
+				reverse_rotate(&b);
+			}
+			count_rotops(b);
+			allign(*a, b);
+			pos = find_min_ops(b);
+		}
+		i = 0;
+		b_head->count--;
+		while (i++ < b_head->count)
+			if (rot == 1)
+			{
+				pf("ra ");
+				g_kosty++;
+				rotate(a);
+			}
+			else
+			{
+				pf("rra ");
+				reverse_rotate(a);
+				g_kosty++;
+			}
+		pf("pa ");
+		g_kosty++;
+		push(a, &b);
+	}
