@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 14:43:53 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/29 18:26:13 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/29 18:47:36 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,9 +177,17 @@ void	allign(t_stack *a, t_stack *b)
 			// count_min(a_node, b_node, a->size, b->size);
 		}
 		else if (a_node->pos == 0)
+		{
+			b_node->rr = 0;
+			b_node->rrr = 0;
 			b_node->count  = ft_min(b_node->rot, b_node->rev);
+		}
 		else if (b_node->pos == 0)
+		{
+			b_node->rr = 0;
+			b_node->rrr = 0;
 			b_node->count = ft_min(a_node->rot, a_node->rev);
+		}
 		b_node = b_node->next;
 		count++;
 	}

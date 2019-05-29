@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/29 18:21:41 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/29 19:00:54 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,92 +83,52 @@ void	new_sort(t_stack **a, t_stack **sorted_stack)
 		allign(*a, b);
 		pos_b = find_min_ops(b);
 		pos_a = get_neighb_by_pos(b, pos_b);
-		if (get_rev(*a, pos_a) <= get_rot(*a, pos_a) && get_rev(b, pos_b) <= get_rot(b, pos_b))
+		if (get_rot(b, pos_b) <= get_rev(b, pos_b))
 		{
-			rev = ft_min(get_rev(*a, pos_a), get_rev(b, pos_b));
-			while (rev-- > 0)
-			{
-				ft_printf("rrr ");
-				rrotate_both(a, &b);
-				g_kosty++;
-				pos_a = (pos_a + 1)- a_size;
-				pos_b = (pos_b + 1) - b->size;			
-			}
-			pos_a = a_size - pos_a;
-			while (pos_a-- > 0)
-			{
-				ft_printf("rra ");
-				g_kosty++;
-				reverse_rotate(a);
-			}
-			pos_b = b->size - pos_b;
-			while (pos_b-- > 0)
-			{
-				g_kosty++;
-				ft_printf("rrb ");
-				reverse_rotate(&b);
-			}
-		}
-		else if (get_rot(*a, pos_a) < get_rev(*a, pos_a) &&  get_rot(b, pos_b) < get_rev(b, pos_b))
-		{
-			rot = ft_min(get_rot(*a, pos_a), get_rot(b, pos_b));
+			rot = get_rr(b, pos_b);
+			i = get_data_at(*a, pos_a);
 			while (rot-- > 0)
 			{
+				pf("rr ");
 				g_kosty++;
 				rotate_both(a, &b);
-				ft_printf("rr ");
-				pos_a--;
-				pos_b--;
 			}
-			while (pos_a-- > 0)
+			while (a_head->data != i)
 			{
+				pf("ra ");
 				g_kosty++;
 				rotate(a);
-				ft_printf("ra ");
 			}
-			while (pos_b-- > 0)
+			rot = get_rot(b, pos_b);
+			while (rot-- > 0)
 			{
+				pf("rb ");
 				g_kosty++;
-				ft_printf("rb ");
 				rotate(&b);
 			}
 		}
 		else
 		{
-			if (get_rot(*a, pos_a) <= get_rev(*a, pos_a))
-			while (pos_a-- > 0)
+			rev = get_rrr(b, pos_b);
+			i = get_data_at(*a, pos_a);
+			while (rev-- > 0)
 			{
+				pf("rrr ");
+				g_kosty++;
+				rrotate_both(a, &b);
+			}
+			while (a_head->data != i)
+			{
+				pf("ra ");
 				g_kosty++;
 				rotate(a);
-				ft_printf("ra ");
-
 			}
-			else if (get_rev(*a, pos_a) < get_rot(*a, pos_a))
+			rev = get_rev(b, pos_b);
+			while (rev-- > 0)
 			{
-				pos_a = a_size - pos_a;
-				while (pos_a-- > 0)
-				{
-					g_kosty++;
-					ft_printf("rra ");
-					reverse_rotate(a);
-				}
-			}
-			if (get_rot(b, pos_b) <= get_rev(b, pos_b))
-			while (pos_b-- > 0)
-			{
+				pf("rb ");
 				g_kosty++;
 				rotate(&b);
-				ft_printf("ra ");
-			}
-			else if (get_rev(b, pos_b) < get_rot(b, pos_b))
-			{
-				pos_b = b->size - pos_b;
-				while (pos_b-- > 0)
-				{
-					g_kosty++;
-					ft_printf("rra ");
-					reverse_rotate(&b);
-				}
 			}
 		}
 		g_kosty += 1;
