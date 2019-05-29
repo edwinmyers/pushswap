@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 14:43:53 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/28 19:21:25 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/29 18:26:13 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,64 @@
 #define a_tdata a->tail->data
 
 
+void count_rrs(t_st_node *a, t_st_node *b)
+{
+	int mixa_sum;
+	int mixb_sum;
+	int rot_sum;
+	int rev_sum;
+
+	b->rr = ft_min(a->rot, b->rot);
+	b->rrr = ft_min(a->rev, b->rev);
+	rot_sum = b->rr + (ft_max(a->rot, b->rot) - b->rr);
+	rev_sum = b->rrr + (ft_max(a->rev, b->rev) - b->rrr);
+	mixa_sum = a->rot + b->rev;
+	mixb_sum = b->rot + a->rev;
+	if (rot_sum <= rev_sum && rot_sum <= mixa_sum && rot_sum <= mixb_sum)
+	{
+		b->rrr = 0;
+		a->rot -= b->rr;
+		b->count = rot_sum;
+		b->rot -= b->rr;
+		b->rev = 0;
+		a->rev = 0;
+	}
+	else if (rev_sum <= rot_sum && rev_sum <= mixa_sum && rev_sum <= mixb_sum)
+	{
+		b->rev -= b->rrr;
+		a->rev -= a->rrr;
+		b->rot = 0;
+		a->rot = 0;
+		b->count = rev_sum;
+		b->rr = 0;
+	}
+	else if (mixa_sum <= rev_sum && mixa_sum <= rot_sum && mixa_sum <= mixb_sum)
+	{
+		b->rr = 0;
+		b->rrr = 0;
+		b->count = mixa_sum;
+	}
+	else if (mixb_sum <= rev_sum && mixb_sum <= rot_sum && mixb_sum <= mixa_sum)
+	{
+		b->rr = 0;
+		b->rrr = 0;
+		b->count = mixb_sum;
+	}
+
+		
+
+
+}
+
 void count_min(t_st_node *a, t_st_node *b, int asize, int bsize)
 {
-	int a_min;
-	int b_min;
+	if (b->flag == 3)
+		b->count = ft_min(a->rot, b->rev) + ft_min(b->rot, a->rev);
+	else if (b->flag == 1) 
+		b->count = b->rr + (ft_max(a->rot, b->rot) - b->rr);
+	else if (b->flag == 2)
+		b->count = b->rrr + (ft_max(a->rev, b->rev) - b->rrr);
 
-	a->rr = ft_min(a->rot, b->rot);
-	b->rr = a->rr;
-	if (a->pos >= asize / 2) 
-		a->rrr = ft_min(a->rev, b->rev);
-	else
-		a->rrr = -0;
-	if (b->pos >= bsize / 2)
-		b->rrr = ft_min(a->rev, b->rev);
-	else
-		b->rrr = 0;
-	a_min = a->pos < asize / 2 ? a->rot - a->rr : a->rev - a->rrr;
-	b_min = b->pos < bsize / 2 ? b->rot - b->rr : b->rev - b->rrr;
-	b->count = a->rr + a_min + b_min;
 }
 
 
@@ -103,7 +143,10 @@ void count_rotops(t_stack *a)
 	else
 	{
 		set_rot(a, 0, 0);
+		set_rev(a, 0, 3);
 		set_rot(a, 1, 1);
+		set_rev(a, 1, 2);
+		set_rot(a, 2, 2);
 		set_rev(a, 2, 1);
 	}
 }
@@ -128,7 +171,15 @@ void	allign(t_stack *a, t_stack *b)
 		b_node->neighb_pos = a_node->pos;
 		a_node->rot = n;
 		a_node->rev = a->size - n;
-		count_min(a_node, b_node, a->size, b->size);
+		if (a_node->pos > 0 && b_node->pos > 0)
+		{
+			count_rrs(a_node, b_node);
+			// count_min(a_node, b_node, a->size, b->size);
+		}
+		else if (a_node->pos == 0)
+			b_node->count  = ft_min(b_node->rot, b_node->rev);
+		else if (b_node->pos == 0)
+			b_node->count = ft_min(a_node->rot, a_node->rev);
 		b_node = b_node->next;
 		count++;
 	}

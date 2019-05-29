@@ -437,3 +437,242 @@ while (a->size != 3)
 		g_kosty++;
 		push(a, &b);
 	}
+
+
+
+
+
+
+
+
+void	new_sort(t_stack **a, t_stack **sorted_stack)
+{
+	t_stack *b;
+	int i;
+	int pos_b;
+	int rev;
+	int rot;
+	int pos_a;
+	int pos;
+
+	b = malloc(sizeof(t_stack));
+	init_list(b);
+	first_three(*a, b, *sorted_stack);
+	while (b->size)
+	{
+		i = 0;
+		count_rotops(b);
+		count_rotops(*a);
+		allign(*a, b);
+		pos_b = find_min_ops(b);
+		pos_a = get_neighb_by_pos(b, pos_b);
+		if (get_rev(*a, pos_a) <= get_rot(*a, pos_a) && get_rev(b, pos_b) <= get_rot(b, pos_b))
+		{
+			rev = ft_min(get_rev(*a, pos_a), get_rev(b, pos_b));
+			while (rev-- > 0)
+			{
+				ft_printf("rrr ");
+				rrotate_both(a, &b);
+				g_kosty++;
+				pos_a = (pos_a + 1)- a_size;
+				pos_b = (pos_b + 1) - b->size;			
+			}
+			pos_a = a_size - pos_a;
+			while (pos_a-- > 0)
+			{
+				ft_printf("rra ");
+				g_kosty++;
+				reverse_rotate(a);
+			}
+			pos_b = b->size - pos_b;
+			while (pos_b-- > 0)
+			{
+				g_kosty++;
+				ft_printf("rrb ");
+				reverse_rotate(&b);
+			}
+		}
+		else if (get_rot(*a, pos_a) < get_rev(*a, pos_a) &&  get_rot(b, pos_b) < get_rev(b, pos_b))
+		{
+			rot = ft_min(get_rot(*a, pos_a), get_rot(b, pos_b));
+			while (rot-- > 0)
+			{
+				g_kosty++;
+				rotate_both(a, &b);
+				ft_printf("rr ");
+				pos_a--;
+				pos_b--;
+			}
+			while (pos_a-- > 0)
+			{
+				g_kosty++;
+				rotate(a);
+				ft_printf("ra ");
+			}
+			while (pos_b-- > 0)
+			{
+				g_kosty++;
+				ft_printf("rb ");
+				rotate(&b);
+			}
+		}
+		else
+		{
+			if (get_rot(*a, pos_a) <= get_rev(*a, pos_a))
+			while (pos_a-- > 0)
+			{
+				g_kosty++;
+				rotate(a);
+				ft_printf("ra ");
+
+			}
+			else if (get_rev(*a, pos_a) < get_rot(*a, pos_a))
+			{
+				pos_a = a_size - pos_a;
+				while (pos_a-- > 0)
+				{
+					g_kosty++;
+					ft_printf("rra ");
+					reverse_rotate(a);
+				}
+			}
+			if (get_rot(b, pos_b) <= get_rev(b, pos_b))
+			while (pos_b-- > 0)
+			{
+				g_kosty++;
+				rotate(&b);
+				ft_printf("ra ");
+			}
+			else if (get_rev(b, pos_b) < get_rot(b, pos_b))
+			{
+				pos_b = b->size - pos_b;
+				while (pos_b-- > 0)
+				{
+					g_kosty++;
+					ft_printf("rra ");
+					reverse_rotate(&b);
+				}
+			}
+		}
+		g_kosty += 1;
+		push(a, &b);
+		ft_printf("pa ");
+
+	}
+ 	if (find_min(*a, &(*a)->min, a_size) > a_size / 2)
+		while (find_min(*a, &(*a)->min, a_size) != 0)
+		{
+			ft_printf("rra ");			
+			reverse_rotate(a);
+			g_kosty += 1;
+		}
+	else
+		while (find_min(*a, &(*a)->min, a_size) != 0)
+		{
+			ft_printf("ra ");
+			rotate(a);
+			g_kosty += 1;
+		}
+	ft_printf("\n|new_sort : %d |\n", g_kosty);
+
+	if (!check_sort(*a))
+		terminate("FUCK\n");
+}
+
+
+
+
+
+
+
+
+
+
+	if (get_rot(b, pos_b) <= get_rev(b, pos_b))
+		{
+			rot = get_rr(b, pos_b);
+			while (rot-- > 0)
+			{
+				pf("rr ");
+				g_kosty++;
+				rotate_both(a, &b);
+			}
+			rot = get_rot(*a, pos_a);
+			while (rot-- > 0)
+			{
+				pf("ra ");
+				g_kosty++;
+				rotate(a);
+			}
+			rot = get_rot(b, pos_b);
+			while (rot-- > 0)
+			{
+				pf("rb ");
+				g_kosty++;
+				rotate(&b);
+			}
+		}
+		else
+		{
+			rev = get_rrr(b, pos_b);
+			while (rev-- > 0)
+			{
+				pf("rrr ");
+				g_kosty++;
+				rrotate_both(a, &b);
+			}
+			rev = get_rev(*a, pos_a);
+			while (rev-- > 0)
+			{
+				pf("ra ");
+				g_kosty++;
+				rotate(a);
+			}
+			rev = get_rev(b, pos_b);
+			while (rev-- > 0)
+			{
+				pf("rb ");
+				g_kosty++;
+				rotate(&b);
+			}
+		}
+
+
+		if (a->pos <= asize / 2 && b->pos <= bsize / 2)
+	{
+		a->rr = ft_min(a->rot, b->rot);
+		b->rr = a->rr;
+		a->rrr = 0;
+		b->rrr = 0;
+		if (a->rot > b->rot)
+		{
+			a->rot -= a->rr;
+			b->rot -= a->rr;
+			b->count = a->rot + a->rr;
+		}
+		else
+		{
+			a->rot -= a->rr;
+			b->rot -= a->rr;
+			b->count = b->rot + a->rr;
+		}	
+	}
+	else 
+	{
+		a->rrr = ft_min(a->rev, b->rev);
+		b->rrr = a->rrr;
+		a->rr = 0;
+		b->rr = 0;
+		if (a->rev > b->rev)
+		{
+			a->rev -= a->rrr;
+			b->rev -= a->rrr;
+			b->count = a->rev + a->rrr;
+		}
+		else
+		{
+			b->rev -= b->rrr;
+			a->rev -= b->rrr;
+			b->count = b->rev + b->rrr;
+		}
+	}

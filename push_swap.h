@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/28 16:05:04 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/29 17:28:12 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct			s_stack_node
 	int rev;
 	int rrr;
 	int rr;
+	int flag;
 	int neighb_pos;
 	short kisa;
 }						t_st_node;
@@ -110,5 +111,7 @@ int get_pos_by_sortpos(t_stack *a, int sort_pos);
 int get_neighb_by_pos(t_stack *a, int pos);
 void set_rev(t_stack *a, int pos, int rev);
 int get_rev(t_stack *a, int pos);
+int get_rr(t_stack *a, int pos);
+int get_rrr(t_stack *a, int pos);
 
 #endif

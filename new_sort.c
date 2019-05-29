@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/28 17:48:04 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/29 18:21:41 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ static void		first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 	{
 		if (a->head->data != a->max && a->head->data != a->min && a->head->data != a->mid)
 		{
-			ft_printf("pb ");
 			push(&b, &a);
 			g_kosty += 1;
 		}
 		else
 		{
-			ft_printf("ra ");
 			rotate(&a);	
 			g_kosty += 1;
 		}
@@ -37,37 +35,31 @@ static void		first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 	if (a->head->data == a->max && a->head->next->data == a->mid)
 	{	
 		swap_st(&a);
-		ft_printf("sa ");
 		g_kosty += 1;
 	}
 	else if (a->head->data == a->min && a->head->next->data == a->max)
 	{
-		ft_printf("sa ");
-		ft_printf("rra ");
 		swap_st(&a);
 		reverse_rotate(&a);
 		g_kosty += 2;
 	}
 	else if (a->head->data == a->mid && a->head->next->data == a->min)
 	{
-		ft_printf("sa ");
-		ft_printf("ra ");
 		swap_st(&a);
 		rotate(&a);
 		g_kosty += 2;
 	}
 	else if (a->head->data == a->max && a->head->next->data == a->min)
 	{
-		ft_printf("rra ");
 		reverse_rotate(&a);
 		g_kosty += 1;
 	}
 	else if (a->head->data == a->min && a->head->next->data == a->mid)
 	{
-		ft_printf("ra ");
 		rotate(&a);
 		g_kosty += 1;
 	}
+	pf("\n");
 }
 
 void	new_sort(t_stack **a, t_stack **sorted_stack)
@@ -199,6 +191,6 @@ void	new_sort(t_stack **a, t_stack **sorted_stack)
 			g_kosty += 1;
 		}
 	ft_printf("\n|new_sort : %d |\n", g_kosty);
-
-
+	// if (!check_sort(*a))
+	// 	terminate("FUCK\n");
 }

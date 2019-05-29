@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 14:20:56 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/28 18:42:43 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/29 18:13:34 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdio.h>
 
 #define MAS 10
-#define MAXP 10
+#define MAXP 12
 #define MINP 0
 
 int     main () {
