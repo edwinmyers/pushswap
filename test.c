@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/01 16:31:23 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/01 18:29:05 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,16 @@ int		main(int argc, char **argv)
 	i = 0;
 	if (argc >= 2)
 	{
-		stack_b = malloc(sizeof(t_stack));
+		stack_b = (t_stack*)malloc(sizeof(t_stack));
 		init_list(stack_b);
 		stack_a = parse_num(argc, argv);
 		check_dup(stack_a);
 		if (check_sort(stack_a))
 			terminate("OK");
 		sorted_stack = parse_num(argc, argv);
-		min_num_sort(&sorted_stack);
 		assign_pos(stack_a);
+		assign_pos(sorted_stack);
+		min_num_sort(&sorted_stack);
 		set_vals(stack_a, sorted_stack);
 		kisa(stack_a);
 		// if (stack_a->size < 70)
@@ -111,12 +112,11 @@ int		main(int argc, char **argv)
 		// else
 		// quick_sort(&stack_a, stack_a->size);
 		// min_num_sort(&stack_a);
-		// while (i++ < stack_a->size)
-		// {
-		// 	ft_printf("%d ", stack_a->head->data);
-		// 	stack_a->head = stack_a->head->next;
-		// }
-		
+		while (i++ < stack_a->size)
+		{
+			ft_printf("%d ", stack_a->head->data);
+			stack_a->head = stack_a->head->next;
+		}
 	}
 	else
 		terminate("usage: ./push_swap ...");

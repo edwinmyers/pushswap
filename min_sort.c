@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:02:35 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/01 16:08:48 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/01 18:26:52 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,10 @@ void min_num_sort(t_stack **a)
 	int min;
 	int pos;
 
-	b = malloc(sizeof(t_stack));
+	b = (t_stack*)malloc(sizeof(t_stack));
 	init_list(b);
 	while (a_size > 3)
 	{
-		if (check_sort(*a))
-			break;
 		pos = find_min(*a, &min, a_size);
 		if (pos > a_size / 2)
 			while (a_head->data != min)
@@ -88,4 +86,6 @@ void min_num_sort(t_stack **a)
 		// ft_printf("pa ");
 		push(a, &b);
 	}
+	if (!check_sort(*a))
+		terminate("FUCK MINSORT");
 }

@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/01 16:32:05 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/01 18:23:17 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,7 +199,7 @@ void	new_sort(t_stack **a, t_stack **sorted_stack)
 	int pos_a;
 	int flag;
 
-	b = malloc(sizeof(t_stack));
+	b = (t_stack*)malloc(sizeof(t_stack));
 	init_list(b);
 	first_three(*a, b, *sorted_stack);
 	while (b->size)
