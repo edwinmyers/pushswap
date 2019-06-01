@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/29 17:28:12 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/05/31 18:16:46 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 #define b_tail b->tail
 #define b_sort_pos b->head->sort_pos
 #define b_count b->head->count
+#define b_flag b->head->flag;
 
 typedef struct			s_stack_node
 {
@@ -113,5 +114,6 @@ void set_rev(t_stack *a, int pos, int rev);
 int get_rev(t_stack *a, int pos);
 int get_rr(t_stack *a, int pos);
 int get_rrr(t_stack *a, int pos);
+int get_flag(t_stack *a, int pos);
 
 #endif

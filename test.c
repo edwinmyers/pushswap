@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/26 19:41:52 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/01 16:31:23 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,11 +111,11 @@ int		main(int argc, char **argv)
 		// else
 		// quick_sort(&stack_a, stack_a->size);
 		// min_num_sort(&stack_a);
-		while (i++ < stack_a->size)
-		{
-			ft_printf("%d ", stack_a->head->data);
-			stack_a->head = stack_a->head->next;
-		}
+		// while (i++ < stack_a->size)
+		// {
+		// 	ft_printf("%d ", stack_a->head->data);
+		// 	stack_a->head = stack_a->head->next;
+		// }
 		
 	}
 	else

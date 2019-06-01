@@ -676,3 +676,78 @@ void	new_sort(t_stack **a, t_stack **sorted_stack)
 			b->count = b->rev + b->rrr;
 		}
 	}
+
+
+
+	while (b->size)
+	{
+		i = 0;
+		count_rotops(b);
+		count_rotops(*a);
+		allign(*a, b);
+		pos_b = find_min_ops(b);
+		pos_a = get_neighb_by_pos(b, pos_b);
+		if (get_rot(b, pos_b) <= get_rev(b, pos_b) && !get_rrr(b, pos_b))
+		{
+			rot = get_rot(b, pos_b);
+			pos = get_rr(b, pos_b);
+			i = get_data_at(*a, pos_a);
+			while (pos-- > 0)
+			{
+				pf("rr ");
+				g_kosty++;
+				rotate_both(a, &b);
+			}
+			while (a_head->data != i)
+			{
+				g_kosty++;
+				if (pos_a <= a_size / 2)
+				{
+					pf("ra ");
+					rotate(a);
+				}
+				else
+				{
+					pf("rra ");
+					reverse_rotate(a);
+				}
+			}
+			while (rot-- > 0)
+			{
+				pf("rb ");
+				g_kosty++;
+				rotate(&b);
+			}
+		}
+		else
+		{
+			pos = get_rrr(b, pos_b);
+			i = get_data_at(*a, pos_a);
+			rev = get_rev(b, pos_b);
+			while (pos-- > 0)
+			{
+				pf("rrr ");
+				g_kosty++;
+				rrotate_both(a, &b);
+			}
+			while (a_head->data != i)
+			{
+				g_kosty++;
+				if (pos_a <= a_size / 2)
+				{
+					pf("ra ");
+					rotate(a);
+				}
+				else
+				{
+					pf("rra ");
+					reverse_rotate(a);
+				}
+			}
+			while (rev-- > 0)
+			{
+				pf("rrb ");
+				g_kosty++;
+				reverse_rotate(&b);
+			}
+		}
