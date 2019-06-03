@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 18:31:03 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/29 17:28:52 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/03 14:26:57 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_st_node	*ft_newnode(int data, size_t data_size, int sort_pos)
 	node->next = NULL;
 	node->pos = 0;
 	node->sort_pos = sort_pos;
-	node->kisa = 0;
 	node->count = 0;
 	node->rot = 0;
 	node->rev = 0;

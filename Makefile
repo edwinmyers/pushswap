@@ -6,7 +6,7 @@
 #    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/05/31 18:16:46 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/06/03 14:28:06 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,7 @@ SOURCE :=	ft_del_node.c\
 			ft_strtoll.c\
 			min_sort.c\
 			find_edge.c\
-			quick_sort.c\
 			new_sort.c\
-			keep_in_stack_a.c\
 			get_node.c\
 			set_count.c\
 			get_count.c\
@@ -57,6 +55,9 @@ SOURCE :=	ft_del_node.c\
 			set_rev.c\
 			get_rev.c\
 			get_flag.c\
+			calculate_count.c\
+			initial_processing.c\
+			perform_flags.c\
 			test.c\
 
 OBJECTS := $(SOURCE:.c=.o)
@@ -66,7 +67,7 @@ OBJS := $(addprefix $(OBJ_DIR)/, $(SOURCE:.c=.o))
 all: directory $(NAME)
 
 $(NAME): $(OBJ_DIR) $(LIB) $(OBJS)
-	@$(CC) -o $@ $(OBJS) $(LIBLINK)
+	@$(CC) $(FLAGS) -o $@ $(OBJS) $(LIBLINK)
 
 $(LIB):
 	@make -C $(LIB_DIR)
