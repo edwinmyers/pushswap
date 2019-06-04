@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 14:23:11 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/03 15:25:04 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,15 @@ void        ft_lstadd_at_head(t_stack **alst, t_st_node *node);
 void		ft_lstadd_at_tail(t_stack **alst, t_st_node *node);
 t_st_node	*ft_newnode(int data, size_t data_size, int sort_pos);
 int         ft_del_node(t_stack **alst);
-void		push(t_stack **stack_dst, t_stack **stack_src);
-void		push_with_pos(t_stack **stack_dst, t_stack **stack_src, t_stack **sorted_stack);
-void        swap_st(t_stack **stack);
-void        rotate(t_stack **stack);
-void        reverse_rotate(t_stack **stack);
-void        swap_both(t_stack **stack_a, t_stack **stack_b);
-void        rotate_both(t_stack **stack_a, t_stack **stack_b);
+void		push(t_stack **stack_dst, t_stack **stack_src, int flag);
+void        swap_st(t_stack **stack, int flag);
+void        rotate(t_stack **stack, int flag);
+void        reverse_rotate(t_stack **stack, int flag);
+void        swap_both(t_stack **stack_a, t_stack **stack_b, int flag);
+void        rotate_both(t_stack **stack_a, t_stack **stack_b, int flag);
+void        rrotate_both(t_stack **stack_a, t_stack **stack_b, int flag);
 int         delfromtail(t_stack **alst);
 void        assign_pos(t_stack *stack);
-void        rrotate_both(t_stack **stack_a, t_stack **stack_b);
 int         find_min(t_stack *a, int *min, int n);
 int         get_data_at(t_stack *stack, int pos);
 int			check_sort(t_stack *stack);
@@ -87,10 +86,10 @@ char        terminate(char *str);
 t_stack		*parse_num(int argc, char **argv);
 long long   ft_strtoll(const char *str);
 void		init_list(t_stack *stack);
-void		min_num_sort(t_stack **a);
+void		min_num_sort(t_stack **a, int flag);
 int			find_median(t_stack *a);
 void		quick_sort(t_stack **a, t_stack **b, int n, int flag);
-void		sort_last_three(t_stack **a);
+void		sort_last_three(t_stack **a, int flag);
 void		new_sort(t_stack **a, t_stack **sorted_stack);
 void		sort_pos(t_stack *orig_stack, t_stack *sort_stack);
 int			find_sort_pos(t_stack *a, int sort_pos);

@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 18:31:03 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 14:26:57 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/03 15:10:31 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_st_node	*ft_newnode(int data, size_t data_size, int sort_pos)
 {
-	t_st_node *node;
+	t_st_node	*node;
 
 	node = (t_st_node*)malloc(sizeof(t_st_node));
 	if (node == NULL)

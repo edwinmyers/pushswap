@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:05:19 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/26 15:31:59 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/03 15:29:30 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int find_median(t_stack *a)
 	int mid;
 
 	temp = stack_dup(a);
-	min_num_sort(&temp);
+	min_num_sort(&temp, 0);
 	mid = get_data_at(temp, (temp->size / 2) - 1);
 	free(temp);
 	return (mid);

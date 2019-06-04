@@ -6,13 +6,13 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:02:35 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 13:33:49 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/03 19:05:22 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void sort_last_three(t_stack **a)
+void sort_last_three(t_stack **a, int flag)
 {
 	int i;
 
@@ -20,20 +20,20 @@ void sort_last_three(t_stack **a)
 	while (i++ < a_size)
 	{
 		if (a_head->data > a_next->data && a_head > a_tail)
-			rotate(a);
+			rotate(a, flag == 0 ? 0 : 1);
 		if (a_head->data > a_next->data)
-			swap_st(a);
-		while (a_head > a_tail)		
-			reverse_rotate(a);
+			swap_st(a, flag == 0 ? 0 : 1);
+		while (a_head->data > a_tail->data)		
+			reverse_rotate(a, flag == 0 ? 0 : 1);
 		if (a_next->data > a_tail->data)
 		{
-			swap_st(a);
-			rotate(a);
+			swap_st(a, flag == 0 ? 0 : 1);
+			rotate(a, flag == 0 ? 0 : 1);
 		}	
 	}
 }
 
-void min_num_sort(t_stack **a)
+void min_num_sort(t_stack **a, int flag)
 {
 	t_stack *b;
 	int min;
@@ -46,15 +46,16 @@ void min_num_sort(t_stack **a)
 		pos = find_min(*a, &min, a_size);
 		if (pos > a_size / 2)
 			while (a_head->data != min)
-				reverse_rotate(a);
+				reverse_rotate(a, flag == 0 ? 0 : 1);
 		else
 			while (a_head->data != min)
-				rotate(a);
-		push(&b, a);
+				rotate(a, flag == 0 ? 0 : 1);
+		push(&b, a, flag == 0 ? 0 : 2);
 	}
-	sort_last_three(a);
+	sort_last_three(a, flag);
 	while (b->size)
-		push(a, &b);
+		push(a, &b, flag == 0 ? 0 : 1);
+	free(b);
 	if (!check_sort(*a))
-		terminate("MINSORT ERROR");
+		terminate("MINSORT FUCK");
 }

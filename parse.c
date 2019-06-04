@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:12:42 by nparker           #+#    #+#             */
-/*   Updated: 2019/05/22 15:36:34 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/03 17:13:34 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,24 @@
 static void		parse_arr(t_stack *stack, int argc, char **argv)
 {
 	int		i;
+	char **str;
+	int j;
+	int len;
 
+	len = 0;
+	j = 0;
 	i = 1;
 	while (i < argc)
 	{
+		j = 0;
 		if (ft_isint(argv[i]) == -1 || ft_ischar(argv[i]) == 1)
 			terminate("Error_is_not_integer");
-		ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(argv[i]), sizeof(int), 0));
+		if ((str = ft_strsplit(argv[i], ' ')))
+		{
+			len = ft_word_count(argv[i], ' ');
+			while(j < len)
+				ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(str[j++]), sizeof(int), 0));
+		}
 		i++;
 	}
 }

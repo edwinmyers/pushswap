@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_del_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 14:30:51 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/20 12:37:05 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/03 17:34:40 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int ft_del_node(t_stack **alst)
 {
     int item;
+	t_st_node *temp;
 
     item = 0;
 	if ((*alst)->head == NULL)
@@ -25,13 +26,16 @@ int ft_del_node(t_stack **alst)
 	else if ((*alst)->size == 1)
 	{
 		item = (*alst)->head->data;
+		free((*alst)->head);
 		(*alst)->head = NULL;
 		(*alst)->tail = NULL;
 	}
 	else
 	{
 		item = (*alst)->head->data;
+		temp = (*alst)->head;
 		(*alst)->head = (*alst)->head->next;
+		free(temp);
 	}
 	(*alst)->size -= 1;
 	return (item);

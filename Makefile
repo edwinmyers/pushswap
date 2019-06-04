@@ -6,7 +6,7 @@
 #    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/06/03 14:28:06 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/06/03 15:14:00 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ SOURCE :=	ft_del_node.c\
 			calculate_count.c\
 			initial_processing.c\
 			perform_flags.c\
-			test.c\
+			push_swap.c\
 
 OBJECTS := $(SOURCE:.c=.o)
 SRCS := $(addprefix $(SRC_DIR), $(SOURCE))
