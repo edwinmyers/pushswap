@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:14:23 by nparker           #+#    #+#             */
-/*   Updated: 2019/05/18 14:44:59 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 13:46:05 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int 		ft_isnum(char *str)
 	}
 	return (0);
 }
+
 int 		ft_ischar(char *str)
 {
 	int i;

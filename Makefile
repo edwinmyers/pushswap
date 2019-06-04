@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nparker <nparker@student.42.fr>            +#+  +:+       +#+         #
+#    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/06/04 13:47:12 by nparker          ###   ########.fr        #
+#    Updated: 2019/06/04 15:12:34 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ SOURCE_CHECK := checker.c\
 				parse.c\
 				terminate.c\
 				ft_strtoll.c\
+				stack_dup.c\
 				assign_pos.c\
 
 OBJECTS_PUSH := $(SOURCE_PUSH:.c=.o)
@@ -98,10 +99,10 @@ OBJS_CHECK := $(addprefix $(OBJ_DIR)/, $(SOURCE_CHECK:.c=.o))
 all: directory $(NAME_PUSH) $(NAME_CHECK)
 
 $(NAME_PUSH): $(OBJ_DIR) $(LIB) $(OBJS_PUSH)
-	@$(CC) $(FLAGS) -g -o $@ $(OBJS_PUSH) $(LIBLINK)
+	@$(CC) -g $(FLAGS) -o $@ $(OBJS_PUSH) $(LIBLINK)
 
 $(NAME_CHECK): $(OBJ_DIR) $(LIB) $(OBJS_CHECK)
-	@$(CC) $(FLAGS) -g -o $@ $(OBJS_CHECK) $(LIBLINK)
+	@$(CC) -g $(FLAGS) -o $@ $(OBJS_CHECK) $(LIBLINK)
 
 $(LIB):
 	@make -C $(LIB_DIR)

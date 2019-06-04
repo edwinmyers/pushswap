@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 17:33:28 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 15:50:05 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 14:35:26 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void reverse_rotate(t_stack **stack, int flag)
     t_st_node *tmp;
 
     if (!(*stack)->tail)
-        return ;
+        terminate("KO");
     tmp = (*stack)->tail;
     ft_lstadd_at_head(stack, tmp);
     delfromtail(stack);

@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 14:30:51 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 17:34:40 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 13:39:45 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int delfromtail(t_stack **alst)
 	if((*alst)->tail == NULL)
 	{	
 		printf("\nList is Empty ..."); 	
-		return -1;
+		return (-1);
 	}
 	else
 	{

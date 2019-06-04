@@ -6,14 +6,13 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 15:25:04 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:23:45 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <unistd.h>
-# include <stdlib.h>
 # include "Libftprintf/source/ft_printf.h"
 # include "Libftprintf/libft/libft.h"
 

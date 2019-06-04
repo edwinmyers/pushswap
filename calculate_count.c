@@ -6,13 +6,13 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 14:09:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 14:13:24 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 13:59:09 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void set_flag1(t_st_node *a, t_st_node *b, int rot_sum)
+void	set_flag1(t_st_node *a, t_st_node *b, int rot_sum)
 {
 	a->rot -= b->rr;
 	b->count = rot_sum;
@@ -20,7 +20,7 @@ void set_flag1(t_st_node *a, t_st_node *b, int rot_sum)
 	b->flag = 1;
 }
 
-void set_flag2(t_st_node *a, t_st_node *b, int rev_sum)
+void	set_flag2(t_st_node *a, t_st_node *b, int rev_sum)
 {
 	b->rev -= b->rrr;
 	a->rev -= a->rrr;
@@ -28,19 +28,19 @@ void set_flag2(t_st_node *a, t_st_node *b, int rev_sum)
 	b->flag = 2;
 }
 
-void set_flag3(t_st_node *b, int mixa_sum)
+void	set_flag3(t_st_node *b, int mixa_sum)
 {
 	b->count = mixa_sum;
 	b->flag = 3;
 }
 
-void set_flag4(t_st_node *b, int mixb_sum)
+void	set_flag4(t_st_node *b, int mixb_sum)
 {
 	b->count = mixb_sum;
 	b->flag = 4;
 }
 
-void calculate_count(t_st_node *a, t_st_node *b)
+void	calculate_count(t_st_node *a, t_st_node *b)
 {
 	int mixa_sum;
 	int mixb_sum;

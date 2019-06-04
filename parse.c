@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:12:42 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/03 17:13:34 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 18:06:44 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ static void		parse_arr(t_stack *stack, int argc, char **argv)
 			len = ft_word_count(argv[i], ' ');
 			while(j < len)
 				ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(str[j++]), sizeof(int), 0));
+			ft_free2dmass(str, j);
 		}
 		i++;
 	}
+	
 }
 
 static void		parse_str(t_stack *stack, char *str)

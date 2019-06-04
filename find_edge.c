@@ -6,7 +6,7 @@
 /*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:05:19 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 15:29:30 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 13:39:27 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int find_median(t_stack *a)
 	mid = get_data_at(temp, (temp->size / 2) - 1);
 	free(temp);
 	return (mid);
-	
 }
 
 int find_sort_pos(t_stack *a, int sort_pos)
