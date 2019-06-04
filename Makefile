@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
+#    By: nparker <nparker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/06/03 15:14:00 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/06/04 13:47:12 by nparker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,22 @@ CC := gcc
 
 FLAGS := -Wall -Wextra -Werror
 
-NAME := push_swap
+NAME_PUSH := push_swap
+
+NAME_CHECK := checker
 
 LIB_DIR	:= libftprintf
-LIBLINK	:= -L$(LIB_DIR) -lftprintf 
+LIBLINK	:= -L$(LIB_DIR) -lftprintf
 LIB := $(LIB_DIR)/libftprintf.a
 
 SRC_DIR := ./
 
-OBJ_DIR := objects/
+OBJ_DIR := objects
 
-SOURCE :=	ft_del_node.c\
+SOURCE_PUSH :=	ft_del_node.c\
+			sort_pos.c\
+			set_vals.c\
+			init_list.c\
 			ft_lstadd_at_head.c\
 			ft_lstadd_at_tail.c\
 			ft_newnode.c\
@@ -56,18 +61,47 @@ SOURCE :=	ft_del_node.c\
 			get_rev.c\
 			get_flag.c\
 			calculate_count.c\
-			initial_processing.c\
 			perform_flags.c\
 			push_swap.c\
+			terminate.c\
 
-OBJECTS := $(SOURCE:.c=.o)
-SRCS := $(addprefix $(SRC_DIR), $(SOURCE))
-OBJS := $(addprefix $(OBJ_DIR)/, $(SOURCE:.c=.o))
+SOURCE_CHECK := checker.c\
+				sort_pos.c\
+				set_vals.c\
+				init_list.c\
+				get_data_at.c\
+				ft_lstadd_at_head.c\
+				ft_lstadd_at_tail.c\
+				ft_newnode.c\
+				ft_del_node.c\
+				validate.c\
+				push.c\
+				reverse_rotate_both.c\
+				reverse_rotate.c\
+				rotate_both.c\
+				rotate.c\
+				swap_both.c\
+				swap_st.c\
+				parse.c\
+				terminate.c\
+				ft_strtoll.c\
+				assign_pos.c\
 
-all: directory $(NAME)
+OBJECTS_PUSH := $(SOURCE_PUSH:.c=.o)
+SRCS_PUSH := $(addprefix $(SRC_DIR), $(SOURCE_PUSH))
+OBJS_PUSH := $(addprefix $(OBJ_DIR)/, $(SOURCE_PUSH:.c=.o))
 
-$(NAME): $(OBJ_DIR) $(LIB) $(OBJS)
-	@$(CC) $(FLAGS) -o $@ $(OBJS) $(LIBLINK)
+OBJECTS_CHECK := $(SOURCE_CHECK:.c=.o)
+SRCS_CHECK := $(addprefix $(SRC_DIR), $(SOURCE_CHECK))
+OBJS_CHECK := $(addprefix $(OBJ_DIR)/, $(SOURCE_CHECK:.c=.o))
+
+all: directory $(NAME_PUSH) $(NAME_CHECK)
+
+$(NAME_PUSH): $(OBJ_DIR) $(LIB) $(OBJS_PUSH)
+	@$(CC) $(FLAGS) -g -o $@ $(OBJS_PUSH) $(LIBLINK)
+
+$(NAME_CHECK): $(OBJ_DIR) $(LIB) $(OBJS_CHECK)
+	@$(CC) $(FLAGS) -g -o $@ $(OBJS_CHECK) $(LIBLINK)
 
 $(LIB):
 	@make -C $(LIB_DIR)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 18:54:40 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/04 13:45:47 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-char	terminate(char *str)
-{
-	ft_printf("%s\n", str);
-	exit(EXIT_FAILURE);
-}
 void free_stack(t_stack **stack)
 {
 	t_st_node *node;

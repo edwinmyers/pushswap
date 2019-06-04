@@ -6,37 +6,37 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:49:19 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/03 16:51:50 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/04 13:48:50 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	instruction(t_stack *a, t_stack *b, char *line)
 {
 
 	if (ft_strequ(line, "pb"))
-		push(&b, &a);
+		push(&b, &a, 0);
 	else if (ft_strequ(line, "pa"))
-		push(&a, &b);
+		push(&a, &b, 0);
 	else if (ft_strequ(line, "sa"))
-		swap_st(&a);
+		swap_st(&a, 0);
 	else if (ft_strequ(line, "sb"))
-		swap_st(&b);
+		swap_st(&b, 0);
 	else if (ft_strequ(line, "ss"))
-		swap_both(&a, &b);
+		swap_both(&a, &b, 0);
 	else if (ft_strequ(line, "ra"))
-		rotate(&a);
+		rotate(&a, 0);
 	else if (ft_strequ(line, "rb"))
-		rotate(&b);
+		rotate(&b, 0);
 	else if (ft_strequ(line, "rra"))
-		reverse_rotate(&a);
+		reverse_rotate(&a, 0);
 	else if (ft_strequ(line, "rrb"))
-		reverse_rotate(&b);
+		reverse_rotate(&b, 0);
 	else if (ft_strequ(line, "rr"))
-		rotate_both(&a, &b);
+		rotate_both(&a, &b, 0);
 	else if (ft_strequ(line, "rrr"))
-		rrotate_both(&a, &b);
+		rrotate_both(&a, &b, 0);
 	else
 		terminate("Error_unknow");
 }
@@ -99,7 +99,7 @@ int         main(int argc, char **argv)
 	short   verbose;
 
 	verbose = 0;
-	while (argc >= 2 && ft_strcmp(argv[1], "-v"))
+	while (argc >= 2 && !ft_strcmp(argv[1], "-v"))
 	{
 		if (ft_strcmp(argv[1], "-v"))
 			verbose = 1;
