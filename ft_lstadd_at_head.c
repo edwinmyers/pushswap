@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 20:07:16 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/05/11 12:29:51 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/05 11:59:37 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_at_head(t_stack **alst, t_st_node *node)
 {
-	if((*alst)->head == NULL)
+	if ((*alst)->head == NULL)
 	{
 		(*alst)->head = node;
 		(*alst)->tail = node;

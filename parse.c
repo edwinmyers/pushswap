@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:12:42 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/04 18:06:44 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 12:43:21 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void		parse_arr(t_stack *stack, int argc, char **argv)
 {
-	int		i;
-	char **str;
-	int j;
-	int len;
+	int			i;
+	char		**str;
+	int			j;
+	int			len;
 
 	len = 0;
 	j = 0;
@@ -30,19 +30,19 @@ static void		parse_arr(t_stack *stack, int argc, char **argv)
 		if ((str = ft_strsplit(argv[i], ' ')))
 		{
 			len = ft_word_count(argv[i], ' ');
-			while(j < len)
-				ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(str[j++]), sizeof(int), 0));
+			while (j < len)
+				ft_lstadd_at_tail(&stack,
+				ft_newnode(ft_strtoll(str[j++]), sizeof(int), 0));
 			ft_free2dmass(str, j);
 		}
 		i++;
 	}
-	
 }
 
 static void		parse_str(t_stack *stack, char *str)
 {
 	char		**num;
-	int		i;
+	int			i;
 
 	num = ft_strsplit(str, ' ');
 	i = 0;
@@ -50,7 +50,8 @@ static void		parse_str(t_stack *stack, char *str)
 	{
 		if (ft_isint(num[i]) == -1 || ft_ischar(num[i]) == 1)
 			terminate("Error_is_not_integer");
-		ft_lstadd_at_tail(&stack, ft_newnode(ft_strtoll(num[i]), sizeof(int), 0));
+		ft_lstadd_at_tail(&stack,
+		ft_newnode(ft_strtoll(num[i]), sizeof(int), 0));
 		i++;
 	}
 	ft_free2dmass(num, i);

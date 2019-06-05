@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 13:43:11 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/04 13:43:37 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/05 13:10:25 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void			sort_pos(t_stack *orig_stack, t_stack *sort_stack)
 {
 	t_st_node		*curr_i;
 	t_st_node		*curr_j;
-	int			    i;
+	int				i;
 
 	i = 0;
 	curr_i = orig_stack->head;

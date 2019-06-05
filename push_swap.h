@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/04 16:23:45 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 13:21:15 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "Libftprintf/source/ft_printf.h"
 # include "Libftprintf/libft/libft.h"
 
-#define pf ft_printf
 #define a_head (*a)->head
 #define a_next (*a)->head->next 
 #define a_tail (*a)->tail
@@ -123,5 +122,6 @@ void		perform_flag4(t_stack *a, t_stack *b, int pos_a, int pos_b);
 void		sort_pos(t_stack *orig_stack, t_stack *sort_stack);
 void		init_list(t_stack *stack);
 void		set_vals(t_stack *orig_stack, t_stack *sorted_stack);
+int			get_min_sort_pos(int *arr, int size);
 
 #endif

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   perform_flags.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 14:21:16 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/04 14:37:05 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 12:54:36 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void perform_flag1(t_stack *a, t_stack *b, int pos_a, int pos_b)
+void		perform_flag1(t_stack *a, t_stack *b, int pos_a, int pos_b)
 {
 	int rot;
 	int pos;
@@ -32,7 +32,7 @@ void perform_flag1(t_stack *a, t_stack *b, int pos_a, int pos_b)
 		rotate(&b, 2);
 }
 
-void perform_flag2(t_stack *a, t_stack *b, int pos_a, int pos_b)
+void		perform_flag2(t_stack *a, t_stack *b, int pos_a, int pos_b)
 {
 	int pos;
 	int i;
@@ -52,7 +52,7 @@ void perform_flag2(t_stack *a, t_stack *b, int pos_a, int pos_b)
 		reverse_rotate(&b, 2);
 }
 
-void perform_flag3(t_stack *a, t_stack *b, int pos_a, int pos_b)
+void		perform_flag3(t_stack *a, t_stack *b, int pos_a, int pos_b)
 {
 	int i;
 	int rev;
@@ -70,11 +70,11 @@ void perform_flag3(t_stack *a, t_stack *b, int pos_a, int pos_b)
 	}
 }
 
-void perform_flag4(t_stack *a, t_stack *b, int pos_a, int pos_b)
+void		perform_flag4(t_stack *a, t_stack *b, int pos_a, int pos_b)
 {
 	int i;
 	int rot;
-	
+
 	rot = get_rot(b, pos_b);
 	i = get_data_at(a, pos_a);
 	while (pos_b > 0 && rot-- > 0)

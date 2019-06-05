@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:14:23 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/04 13:46:05 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 13:13:46 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			check_sort(t_stack *stack)
+int				check_sort(t_stack *stack)
 {
 	t_st_node	*curr_i;
 	t_st_node	*curr_j;
-	int		i;
+	int			i;
 
 	i = 0;
 	curr_i = stack->head;
@@ -27,7 +27,7 @@ int			check_sort(t_stack *stack)
 	{
 		if (curr_i->data > curr_j->data && curr_j != NULL)
 		{
-			break;
+			break ;
 		}
 		curr_j = curr_j->next;
 		curr_i = curr_i->next;
@@ -38,9 +38,9 @@ int			check_sort(t_stack *stack)
 	return (0);
 }
 
-int		ft_isint(char *str)
+int				ft_isint(char *str)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (ft_strtoll(str) > 2147483647)
@@ -50,9 +50,9 @@ int		ft_isint(char *str)
 	return (0);
 }
 
-int 		ft_isnum(char *str)
+int				ft_isnum(char *str)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (str[i])
@@ -64,9 +64,9 @@ int 		ft_isnum(char *str)
 	return (0);
 }
 
-int 		ft_ischar(char *str)
+int				ft_ischar(char *str)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (str[i])
@@ -82,7 +82,7 @@ void			check_dup(t_stack *stack)
 {
 	t_st_node		*curr_i;
 	t_st_node		*curr_j;
-	int			i;
+	int				i;
 
 	i = 0;
 	curr_i = stack->head;

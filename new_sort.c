@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   new_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/04 14:36:47 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 12:53:45 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 #define POS_B pos[1]
 #define POS_A pos[0]
 
-
-static void		first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
+static void			first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 {
-	int i;	
-		
+	int		i;
+
 	while (a->size != 3)
 	{
 		if (a->head->data != a->max && a->head->data != a->min && a->head->data != a->mid)
 			push(&b, &a, 2);
 		else
-			rotate(&a, 1);	
+			rotate(&a, 1);
 	}
 	if (a->head->data == a->max && a->head->next->data == a->mid)
 		swap_st(&a, 1);
@@ -44,20 +43,20 @@ static void		first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 		rotate(&a, 1);
 }
 
-static	void	normalize_stack(t_stack *a)
+static	void		normalize_stack(t_stack *a)
 {
 	if (find_min(a, &a->min, a->size) > a->size / 2)
-		while (find_min(a, &a->min, a->size) != 0)			
-		reverse_rotate(&a, 1);
+		while (find_min(a, &a->min, a->size) != 0)
+			reverse_rotate(&a, 1);
 	else
 		while (find_min(a, &a->min, a->size) != 0)
-		rotate(&a, 1);
+			rotate(&a, 1);
 }
 
-void	new_sort(t_stack **a, t_stack **sorted_stack)
+void				new_sort(t_stack **a, t_stack **sorted_stack)
 {
-	t_stack *b;
-	int pos[2];
+	t_stack		*b;
+	int			pos[2];
 
 	b = (t_stack*)malloc(sizeof(t_stack));
 	init_list(b);

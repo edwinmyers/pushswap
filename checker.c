@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:49:19 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/04 18:37:55 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 13:22:32 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,11 +117,11 @@ static void		checker(int argc, char **argv, short *check_flags)
 		free(line);
 		if (b->size == 0 && check_sort(a))
 		{
-			VERBOSE || COLOR ? pf("COUNT: %d\n", ++i) : 0;
+			VERBOSE || COLOR ? ft_printf("COUNT: %d\n", ++i) : 0;
 			COLOR ? print_stack_color(a, b, 0) : 0;
 			terminate("\e[32m OK");
 		}
-		VERBOSE || COLOR ? pf("COUNT: %d\n\n", ++i) : 0;
+		VERBOSE || COLOR ? ft_printf("COUNT: %d\n\n", ++i) : 0;
 	}
 	!check_sort(a) ? terminate("\x1b[31mKO") : 0;
 }

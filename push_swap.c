@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/04 14:36:36 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 12:44:43 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-void free_stack(t_stack **stack)
+void				free_stack(t_stack **stack)
 {
-	t_st_node *node;
-	t_st_node *temp;
+	t_st_node	*node;
+	t_st_node	*temp;
 
 	temp = (*stack)->head;
 	while ((*stack)->size--)
@@ -30,10 +30,10 @@ void free_stack(t_stack **stack)
 	free(*stack);
 }
 
-int		main(int argc, char **argv)
+int					main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack *sorted_stack;
+	t_stack		*stack_a;
+	t_stack		*sorted_stack;
 
 	if (argc < 2)
 		terminate("usage: ./push_swap ...");

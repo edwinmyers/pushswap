@@ -3,40 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   count_ops.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 14:43:53 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/03 14:15:23 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 12:14:46 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#define b_hdata b->head->data
-#define a_hdata a->head->data
-#define a_tdata a->tail->data
 
-
-int		get_min_sort_pos(int *arr, int size)
-{
-	int min_pos;
-	int i;
-
-	i = -1;
-	min_pos = arr[0];
-	while (++i < size)
-	{
-		if (min_pos > arr[i])
-			min_pos = arr[i];
-	}
-	return (min_pos);
-}
-
-int		find_neighb(t_stack *a, int sort_pos)
+int				find_neighb(t_stack *a, int sort_pos)
 {
 	t_st_node	*node;
 	int			min_pos[a->size];
-	int i;
-	int min;
+	int			i;
+	int			min;
 
 	i = 0;
 	arr_zero(min_pos, a->size);
@@ -57,10 +38,10 @@ int		find_neighb(t_stack *a, int sort_pos)
 	return (get_pos_by_sortpos(a, min));
 }
 
-void count_rotops(t_stack *a)
+void			count_rotops(t_stack *a)
 {
-	int i;
-	int j;
+	int			i;
+	int			j;
 
 	i = -1;
 	while (++i < a->size)
@@ -71,40 +52,41 @@ void count_rotops(t_stack *a)
 		set_rev(a, i, j--);
 }
 
-void	no_need_to_move(t_st_node *a_node, t_st_node *b_node)
+void			no_need_to_move(t_st_node *a_node, t_st_node *b_node)
 {
 	b_node->rr = 0;
 	b_node->rrr = 0;
-	b_node->count  = ft_min(a_node->rot, a_node->rev) + ft_min(b_node->rot, b_node->rev);
+	b_node->count = ft_min(a_node->rot, a_node->rev)
+					+ ft_min(b_node->rot, b_node->rev);
 	if (a_node->pos == 0)
 	{
 		if (b_node->rot <= b_node->rev)
-		b_node->flag = 4;
+			b_node->flag = 4;
 		else
-		b_node->flag = 3;
+			b_node->flag = 3;
 	}
 	else if (b_node->pos == 0)
 	{
 		if (a_node->rot <= a_node->rev)
-		b_node->flag = 4;
+			b_node->flag = 4;
 		else
-		b_node->flag = 3;
+			b_node->flag = 3;
 	}
 }
 
-void	allign(t_stack *a, t_stack *b)
+void			allign(t_stack *a, t_stack *b)
 {
-	int i;
-	t_st_node *a_node;
-	t_st_node *b_node;
-	int n;
+	int			i;
+	t_st_node	*a_node;
+	t_st_node	*b_node;
+	int			n;
 
 	b_node = b->head;
 	while (b_node)
 	{
 		i = 0;
 		a_node = a->head;
-		n =	find_neighb(a, b_node->sort_pos);
+		n = find_neighb(a, b_node->sort_pos);
 		while (i++ < n)
 			a_node = a_node->next;
 		b_node->neighb_pos = a_node->pos;

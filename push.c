@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 15:28:49 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/04 15:32:55 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/05 12:40:48 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void			push(t_stack **stack_dst, t_stack **stack_src, int flag)
 
 	if (!(*stack_src)->head)
 		terminate("KO");
-	tmp = ft_newnode((*stack_src)->head->data, sizeof(int), (*stack_src)->head->sort_pos);
+	tmp = ft_newnode((*stack_src)->head->data, sizeof(int),
+				(*stack_src)->head->sort_pos);
 	ft_del_node(stack_src);
-	if ((*stack_src)->size) 
+	if ((*stack_src)->size)
 		assign_pos(*stack_src);
 	ft_lstadd_at_head(stack_dst, tmp);
 	if ((*stack_dst)->size)
