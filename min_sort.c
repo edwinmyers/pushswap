@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   min_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:02:35 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/05 13:08:01 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/05 13:29:13 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void		sort_last_three(t_stack **a, int flag)
 	int		i;
 
 	i = 0;
-	while (i++ < a_size)
+	while (i++ < A_SIZE)
 	{
-		if (a_head->data > a_next->data && a_head > a_tail)
+		if ((*a)->head->data > A_NEXT->data && (*a)->head > A_TAIL)
 			rotate(a, flag == 0 ? 0 : 1);
-		if (a_head->data > a_next->data)
+		if ((*a)->head->data > A_NEXT->data)
 			swap_st(a, flag == 0 ? 0 : 1);
-		while (a_head->data > a_tail->data)
+		while ((*a)->head->data > A_TAIL->data)
 			reverse_rotate(a, flag == 0 ? 0 : 1);
-		if (a_next->data > a_tail->data)
+		if (A_NEXT->data > A_TAIL->data)
 		{
 			swap_st(a, flag == 0 ? 0 : 1);
 			rotate(a, flag == 0 ? 0 : 1);
@@ -41,14 +41,14 @@ void		min_num_sort(t_stack **a, int flag)
 
 	b = (t_stack*)malloc(sizeof(t_stack));
 	init_list(b);
-	while (a_size > 3)
+	while (A_SIZE > 3)
 	{
-		pos = find_min(*a, &min, a_size);
-		if (pos > a_size / 2)
-			while (a_head->data != min)
+		pos = find_min(*a, &min, A_SIZE);
+		if (pos > A_SIZE / 2)
+			while ((*a)->head->data != min)
 				reverse_rotate(a, flag == 0 ? 0 : 1);
 		else
-			while (a_head->data != min)
+			while ((*a)->head->data != min)
 				rotate(a, flag == 0 ? 0 : 1);
 		push(&b, a, flag == 0 ? 0 : 2);
 	}

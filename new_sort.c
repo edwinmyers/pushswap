@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   new_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/18 14:17:23 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/05 12:53:45 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/05 13:25:22 by vice-wra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 
 static void			first_three(t_stack *a, t_stack *b, t_stack *sorted_stack)
 {
-	int		i;
-
 	while (a->size != 3)
 	{
-		if (a->head->data != a->max && a->head->data != a->min && a->head->data != a->mid)
+		if (a->head->data != a->max && a->head->data
+		!= a->min && a->head->data != a->mid)
 			push(&b, &a, 2);
 		else
 			rotate(&a, 1);
