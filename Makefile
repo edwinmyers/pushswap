@@ -6,7 +6,7 @@
 #    By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/11 12:33:04 by nparker           #+#    #+#              #
-#    Updated: 2019/06/04 15:12:34 by vice-wra         ###   ########.fr        #
+#    Updated: 2019/06/05 13:57:14 by vice-wra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,7 +120,7 @@ clean:
 	@make -C $(LIB_DIR) clean
 	@rm -rf $(OBJ_DIR)
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME_PUSH) $(NAME_CHECK)
 	@make -C $(LIB_DIR) fclean
 
 re: fclean all
