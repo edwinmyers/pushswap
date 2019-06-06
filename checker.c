@@ -17,27 +17,27 @@
 
 void			instruction(t_stack *a, t_stack *b, char *line, int flag)
 {
-	if (ft_strstr(line, "pb\n"))
+	if (ft_strequ(line, "pb\n"))
 		push(&b, &a, flag == 1 ? 2 : 0);
-	else if (ft_strstr(line, "pa\n"))
+	else if (ft_strequ(line, "pa\n"))
 		push(&a, &b, flag == 1 ? 1 : 0);
-	else if (ft_strstr(line, "sa\n"))
+	else if (ft_strequ(line, "sa\n"))
 		swap_st(&a, flag == 1 ? 1 : 0);
-	else if (ft_strstr(line, "sb\n"))
+	else if (ft_strequ(line, "sb\n"))
 		swap_st(&b, flag == 1 ? 2 : 0);
-	else if (ft_strstr(line, "ss\n"))
+	else if (ft_strequ(line, "ss\n"))
 		swap_both(&a, &b, flag == 1 ? 3 : 0);
-	else if (ft_strnstr(line, "ra\n", 3))
+	else if (ft_strequ(line, "ra\n"))
 		rotate(&a, flag == 1 ? 1 : 0);
-	else if (ft_strnstr(line, "rb\n", 3))
+	else if (ft_strequ(line, "rb\n"))
 		rotate(&b, flag == 1 ? 2 : 0);
-	else if (ft_strstr(line, "rra\n"))
+	else if (ft_strequ(line, "rra\n"))
 		reverse_rotate(&a, flag == 1 ? 1 : 0);
-	else if (ft_strstr(line, "rrb\n"))
+	else if (ft_strequ(line, "rrb\n"))
 		reverse_rotate(&b, flag == 1 ? 2 : 0);
-	else if (ft_strnstr(line, "rr\n", 3))
+	else if (ft_strequ(line, "rr\n"))
 		rotate_both(&a, &b, flag == 1 ? 3 : 0);
-	else if (ft_strstr(line, "rrr\n"))
+	else if (ft_strequ(line, "rrr\n"))
 		rrotate_both(&a, &b, flag == 1 ? 3 : 0);
 	else
 		terminate("Error", 2);

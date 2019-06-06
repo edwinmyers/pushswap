@@ -45,7 +45,7 @@ int				ft_isint(char *str)
 	i = 0;
 	if (ft_strtoll(str) > 2147483647)
 		return (-1);
-	if (ft_strtoll(str) < -2147483647)
+	if (ft_strtoll(str) < -2147483648)
 		return (-1);
 	return (0);
 }
@@ -60,7 +60,7 @@ int				ft_isnum(char *str)
 	num = ft_strtoll(str);
 	if (!ft_isdigit(str[i]) && len == 1)
 		return (0);
-	i = ft_count_digits(num) + (num < 0 || str[i] == '+' ? 1 : 0);
+	i = ft_count_digits(num) + (num < 0 || (str[i] == '+' && ft_isdigit(str[i + 1])) ? 1 : 0);
 	if (i != len)
 		return (0);
 	return (1);

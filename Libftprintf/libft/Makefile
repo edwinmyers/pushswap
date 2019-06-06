@@ -12,7 +12,7 @@
 
 CC := gcc
 
-FLAGS := -Wall -Wextra -Werror -c
+FLAGS := -Wall -Wextra -Werror -c -g
 
 NAME := libft.a
 
