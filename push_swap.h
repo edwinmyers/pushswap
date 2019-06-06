@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/07 14:32:37 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/05 13:41:42 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:19:36 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int				ft_isint(char *str);
 int				ft_isnum(char *str);
 int				ft_ischar(char *str);
 void			check_dup(t_stack *stack);
-char			terminate(char *str);
+char			terminate(char *str, int output);
 t_stack			*parse_num(int argc, char **argv);
 long long		ft_strtoll(const char *str);
 void			init_list(t_stack *stack);

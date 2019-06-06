@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 17:14:23 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/05 13:13:46 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/06 16:47:30 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,29 +53,17 @@ int				ft_isint(char *str)
 int				ft_isnum(char *str)
 {
 	int			i;
+	int			len;
+	int			num;
 
-	i = 0;
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]))
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int				ft_ischar(char *str)
-{
-	int			i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (ft_isalpha(str[i]))
-			return (1);
-		i++;
-	}
-	return (0);
+	len = ft_strlen(str);
+	num = ft_strtoll(str);
+	if (!ft_isdigit(str[i]) && len == 1)
+		return (0);
+	i = ft_count_digits(num) + (num < 0 || str[i] == '+' ? 1 : 0);
+	if (i != len)
+		return (0);
+	return (1);
 }
 
 void			check_dup(t_stack *stack)
@@ -92,7 +80,7 @@ void			check_dup(t_stack *stack)
 		while (curr_j != NULL)
 		{
 			if (curr_i->data == curr_j->data)
-				terminate("Error_duplicate");
+				terminate("Error", 2);
 			curr_j = curr_j->next;
 		}
 		i++;

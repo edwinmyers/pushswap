@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   min_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 17:02:35 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/05 13:29:13 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:19:53 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ void		min_num_sort(t_stack **a, int flag)
 		push(a, &b, flag == 0 ? 0 : 1);
 	free(b);
 	if (!check_sort(*a))
-		terminate("MINSORT FUCK");
+		terminate("MINSORT FUCK", 2);
 }

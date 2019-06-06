@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/06 13:03:29 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/06 16:30:32 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int					main(int argc, char **argv)
 	t_stack		*sorted_stack;
 
 	if (argc < 2)
-		terminate("usage: ./push_swap ...");
+		terminate("usage: ./push_swap ...", 2);
 	stack_a = parse_num(argc, argv);
 	check_dup(stack_a);
 	if (check_sort(stack_a))
@@ -51,7 +51,7 @@ int					main(int argc, char **argv)
 	else
 		new_sort(&stack_a, &sorted_stack);
 	if (!check_sort(stack_a))
-		terminate("FUCK\n");
+		terminate("FUCK\n", 2);
 	free_stack(&stack_a);
 	free_stack(&sorted_stack);
 	exit(EXIT_SUCCESS);

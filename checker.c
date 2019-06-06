@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:49:19 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/06 16:06:05 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/06 16:45:22 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void			instruction(t_stack *a, t_stack *b, char *line, int flag)
 	else if (ft_strstr(line, "rrr\n"))
 		rrotate_both(&a, &b, flag == 1 ? 3 : 0);
 	else
-		terminate("Error");
+		terminate("Error", 2);
 }
 
 void			print_stack(t_stack *a, t_stack *b)
@@ -122,7 +122,7 @@ static void		checker(int argc, char **argv, short *check_flags)
 			COLOR ? print_stack_color(a, b, 0) : 0;
 		}
 	}
-	!check_sort(a) || b->size ? terminate("KO") : terminate("OK");
+	!check_sort(a) || b->size ? terminate("KO", 1) : terminate("OK", 1);
 }
 
 int				main(int argc, char **argv)
