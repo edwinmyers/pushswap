@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 15:07:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/05 12:44:43 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/06 13:03:29 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ int					main(int argc, char **argv)
 	stack_a = parse_num(argc, argv);
 	check_dup(stack_a);
 	if (check_sort(stack_a))
-		terminate("OK");
+		exit(EXIT_SUCCESS);
 	sorted_stack = parse_num(argc, argv);
 	assign_pos(stack_a);
 	assign_pos(sorted_stack);
 	min_num_sort(&sorted_stack, 0);
 	set_vals(stack_a, sorted_stack);
-	if (stack_a->size < 5)
+	if (stack_a->size <= 10)
 		min_num_sort(&stack_a, 1);
 	else
 		new_sort(&stack_a, &sorted_stack);

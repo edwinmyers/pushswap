@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/25 13:45:09 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/03 17:07:16 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/06 15:45:19 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int					ft_hex_to_dec(char *str);
 int					ft_min(int n, int m);
 void				ft_free2dmass(char **res, int i);
 int					ft_word_count(char const *str, char c);
+int					gnl_with_eol(const int fd, char **line);
 
 typedef struct		s_list
 {

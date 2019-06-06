@@ -6,7 +6,7 @@
 /*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 17:33:28 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/05 12:55:26 by nparker          ###   ########.fr       */
+/*   Updated: 2019/06/06 13:21:47 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void		reverse_rotate(t_stack **stack, int flag)
 {
 	t_st_node	*tmp;
 
-	if (!(*stack)->tail)
-		terminate("KO");
+	if ((*stack)->size < 2)
+		return ;
 	tmp = (*stack)->tail;
 	ft_lstadd_at_head(stack, tmp);
 	delfromtail(stack);

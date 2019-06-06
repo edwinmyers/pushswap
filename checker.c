@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 10:49:19 by nparker           #+#    #+#             */
-/*   Updated: 2019/06/05 13:57:16 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:06:05 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,30 @@
 
 void			instruction(t_stack *a, t_stack *b, char *line, int flag)
 {
-	if (ft_strequ(line, "pb"))
-		push(&b, &a, flag == 1 ? 1 : 0);
-	else if (ft_strequ(line, "pa"))
-		push(&a, &b, flag == 1 ? 2 : 0);
-	else if (ft_strequ(line, "sa"))
+	if (ft_strstr(line, "pb\n"))
+		push(&b, &a, flag == 1 ? 2 : 0);
+	else if (ft_strstr(line, "pa\n"))
+		push(&a, &b, flag == 1 ? 1 : 0);
+	else if (ft_strstr(line, "sa\n"))
 		swap_st(&a, flag == 1 ? 1 : 0);
-	else if (ft_strequ(line, "sb"))
+	else if (ft_strstr(line, "sb\n"))
 		swap_st(&b, flag == 1 ? 2 : 0);
-	else if (ft_strequ(line, "ss"))
+	else if (ft_strstr(line, "ss\n"))
 		swap_both(&a, &b, flag == 1 ? 3 : 0);
-	else if (ft_strequ(line, "ra"))
+	else if (ft_strnstr(line, "ra\n", 3))
 		rotate(&a, flag == 1 ? 1 : 0);
-	else if (ft_strequ(line, "rb"))
+	else if (ft_strnstr(line, "rb\n", 3))
 		rotate(&b, flag == 1 ? 2 : 0);
-	else if (ft_strequ(line, "rra"))
+	else if (ft_strstr(line, "rra\n"))
 		reverse_rotate(&a, flag == 1 ? 1 : 0);
-	else if (ft_strequ(line, "rrb"))
+	else if (ft_strstr(line, "rrb\n"))
 		reverse_rotate(&b, flag == 1 ? 2 : 0);
-	else if (ft_strequ(line, "rr"))
+	else if (ft_strnstr(line, "rr\n", 3))
 		rotate_both(&a, &b, flag == 1 ? 3 : 0);
-	else if (ft_strequ(line, "rrr"))
+	else if (ft_strstr(line, "rrr\n"))
 		rrotate_both(&a, &b, flag == 1 ? 3 : 0);
 	else
-		terminate("\x1b[31mError_unknown_command");
+		terminate("Error");
 }
 
 void			print_stack(t_stack *a, t_stack *b)
@@ -93,7 +93,7 @@ void			print_stack_color(t_stack *a, t_stack *b, int flag)
 		curr_b = curr_b ? curr_b->next : curr_b;
 	}
 	ft_printf("\x1b[33m<=========+=========>\n\x1b[35m");
-	system("sleep 0.5");
+	system("sleep 0.8");
 	flag == 1 ? system("clear") : 0;
 }
 
@@ -109,21 +109,20 @@ static void		checker(int argc, char **argv, short *check_flags)
 	check_dup(a = parse_num(argc, argv));
 	i = 0;
 	VERBOSE ? print_stack(a, b) : 0;
-	while (get_next_line(0, &line) > 0)
+	while (gnl_with_eol(0, &line) > 0)
 	{
 		instruction(a, b, line, VERBOSE || COLOR ? 1 : 0);
 		VERBOSE ? print_stack(a, b) : 0;
 		COLOR ? print_stack_color(a, b, 1) : 0;
+		VERBOSE || COLOR ? ft_printf("COUNT: %d\n\n", ++i) : 0;
 		free(line);
 		if (b->size == 0 && check_sort(a))
 		{
-			VERBOSE || COLOR ? ft_printf("COUNT: %d\n", ++i) : 0;
+			VERBOSE || COLOR ? ft_printf("Total_Count: %d\n", i) : 0;
 			COLOR ? print_stack_color(a, b, 0) : 0;
-			terminate("\e[32m OK");
 		}
-		VERBOSE || COLOR ? ft_printf("COUNT: %d\n\n", ++i) : 0;
 	}
-	!check_sort(a) ? terminate("\x1b[31mKO") : 0;
+	!check_sort(a) || b->size ? terminate("KO") : terminate("OK");
 }
 
 int				main(int argc, char **argv)
@@ -144,6 +143,6 @@ int				main(int argc, char **argv)
 	if (argc >= 2)
 		checker(argc, argv, check_flags);
 	else
-		terminate("usage: ./checker [-v][-c] set of numbers");
+		exit(EXIT_FAILURE);
 	return (0);
 }

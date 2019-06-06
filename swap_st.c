@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_st.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vice-wra <vice-wra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nparker <nparker@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/10 17:05:20 by vice-wra          #+#    #+#             */
-/*   Updated: 2019/06/04 14:34:24 by vice-wra         ###   ########.fr       */
+/*   Updated: 2019/06/06 13:21:02 by nparker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	swap_st(t_stack **stack, int flag)
 	int	tmp;
 	int	tmp2;
 
-	if (!(*stack)->head)
-		terminate("KO");
+	if ((*stack)->size < 2)
+		return ;
 	tmp = (*stack)->head->data;
 	tmp2 = (*stack)->head->sort_pos;
 	(*stack)->head->data = (*stack)->head->next->data;

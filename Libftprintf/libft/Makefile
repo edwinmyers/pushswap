@@ -6,7 +6,7 @@
 #    By: nparker <nparker@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/11 17:22:58 by nparker           #+#    #+#              #
-#    Updated: 2019/05/11 12:48:05 by nparker          ###   ########.fr        #
+#    Updated: 2019/06/06 15:58:46 by nparker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,13 +34,16 @@ SOURCES := ft_memset.c\
 	ft_vec_create.c\
 	ft_vec_push_back.c\
 	ft_vec_resize.c\
+	ft_vec_at.c\
 	get_next_line.c\
+	gnl_with_eol.c\
 	ft_bzero.c\
 	ft_memcpy.c\
 	ft_memccpy.c\
 	ft_memmove.c\
 	ft_memchr.c\
 	ft_memcmp.c\
+	ft_strrchr.c\
 	ft_strlen.c\
 	ft_strdup.c\
 	ft_strcpy.c\
@@ -63,6 +66,7 @@ SOURCES := ft_memset.c\
 	ft_memalloc.c\
 	ft_memdel.c\
 	ft_strnew.c\
+	ft_strlcat.c\
 	ft_strdel.c\
 	ft_strclr.c\
 	ft_striter.c\
@@ -84,6 +88,7 @@ SOURCES := ft_memset.c\
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
+	ft_lstlen.c\
 	ft_lstnew.c\
 	ft_lstdelone.c\
 	ft_lstdel.c\
@@ -91,7 +96,7 @@ SOURCES := ft_memset.c\
 	ft_lstiter.c\
 	ft_lstdel_begin.c\
 	ft_lstmap.c\
-	ft_strndup.c\
+	ft_strndup.c
 
 INCLUDES := libft.h
 
@@ -105,8 +110,8 @@ $(NAME): $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 
-$(OBJECTS_DIR])%.o: $(SOURCES_DIR)%.c
-	@$(CC) $(FLAGS) -I $(INCLUDES) $< -o $@
+$(OBJECTS_DIR)%.o: $(SOURCES_DIR)%.c
+	$(CC) $(FLAGS) -I $(INCLUDES) $< -o $@
 clean:
 	@rm -rf $(OBJECTS)
 
