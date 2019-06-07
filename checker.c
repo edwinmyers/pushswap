@@ -115,7 +115,7 @@ static void		checker(int argc, char **argv, short *check_flags)
 		VERBOSE ? print_stack(a, b) : 0;
 		COLOR ? print_stack_color(a, b, 1) : 0;
 		VERBOSE || COLOR ? ft_printf("COUNT: %d\n\n", ++i) : 0;
-		free(line);
+		ft_strdel(&line);
 		if (b->size == 0 && check_sort(a))
 		{
 			VERBOSE || COLOR ? ft_printf("Total_Count: %d\n", i) : 0;

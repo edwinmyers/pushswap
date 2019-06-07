@@ -76,7 +76,10 @@ int					gnl_with_eol(const int fd, char **line)
 	if (read_fd < 0)
 		return (-1);
 	if (read_fd == 0 && (str[fd] == NULL || str[fd][0] == '\0'))
+	{
+		free(str[fd]);
 		return (0);
+	}
 	if (create_line(str, line, fd) == -1)
 		return (-1);
 	return (1);

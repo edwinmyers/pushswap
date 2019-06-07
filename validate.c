@@ -25,11 +25,11 @@ int				check_sort(t_stack *stack)
 		return (1);
 	while (i < stack->size)
 	{
-		if (curr_i->data > curr_j->data && curr_j != NULL)
+		if (curr_j != NULL && curr_i->data > curr_j->data)
 		{
 			break ;
 		}
-		curr_j = curr_j->next;
+		curr_j = curr_j ? curr_j->next : 0;
 		curr_i = curr_i->next;
 		i++;
 		if (curr_j == NULL)
@@ -58,9 +58,9 @@ int				ft_isnum(char *str)
 
 	len = ft_strlen(str);
 	num = ft_strtoll(str);
-	if (!ft_isdigit(str[i]) && len == 1)
+	if (!ft_isdigit(str[0]) && len == 1)
 		return (0);
-	i = ft_count_digits(num) + (num < 0 || (str[i] == '+' && ft_isdigit(str[i + 1])) ? 1 : 0);
+	i = ft_count_digits(num) + (num < 0 || (str[0] == '+' && ft_isdigit(str[1])) ? 1 : 0);
 	if (i != len)
 		return (0);
 	return (1);

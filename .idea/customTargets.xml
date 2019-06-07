@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CLionExternalBuildManager">
+    <target id="73d2b844-6d37-4e8f-9318-acef7d316789" name="push_swap" projectName="push_swap">
+      <configuration id="bea0f14c-10ed-49de-ab0a-04df5283b4c1" name="push_swap">
+        <build type="TOOL">
+          <tool actionId="Tool_External Tools_make" />
+        </build>
+      </configuration>
+    </target>
+  </component>
+</project>

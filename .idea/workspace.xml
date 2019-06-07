@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="push_swap" targetName="push_swap" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e8832e5-2462-4699-8e1b-1ee60c44069a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_abs.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_arr2alloc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_arr2free.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_atoi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_bzero.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_count_lines.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_countwords.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_free2dmass.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_hex_to_dec.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_isalnum.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_isalpha.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_isascii.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_isdigit.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_isprint.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_itoa.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstadd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstdel.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstdel_begin.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstdelone.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstiter.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstlen.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstmap.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_lstnew.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_max.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memalloc.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memccpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memcmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memcpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memdel.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memmove.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_memset.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_min.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_pow.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_pushback.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putchar.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putchar_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putendl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putendl_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putnbr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putnbr_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_putstr_fd.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strcat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strclr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strcmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strcpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strdel.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strdup.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strequ.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_striter.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_striteri.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strjoin.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strlcat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strlen.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strmap.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strmapi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strncat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strncmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strncpy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strndup.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strnequ.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strnew.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strnstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strrchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strsplit.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strsub.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_strtrim.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_tolower.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_toupper.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_vec_at.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_vec_create.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_vec_push_back.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/ft_vec_resize.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/get_next_line.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/gnl_with_eol.c" beforeDir="false" afterPath="$PROJECT_DIR$/Libftprintf/libft/gnl_with_eol.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/libft/gnl_with_eol.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/arr_zero.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/bignum_create.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/bignum_create_by_str.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/bignum_destroy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/bin_div.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/bin_mult.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/bin_sum.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/bin_to_dec.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/c_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/cast.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/cust_str_ops.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/d_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/dec_div.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/dec_mult.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/dec_sum.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/f_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fetch.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/find_exclusion.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/find_flags.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_copy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_destroy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_init.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_vector_create.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_vector_destroy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_vector_length.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_vector_push_back.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/fs_vector_resize.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_abs.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_bzero.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_count_digits.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_dec_to_hex.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_dec_to_oct.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_isalnum.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_isalpha.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_isdigit.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_ltoa.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_max.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_pow.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_printf.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_rev_str.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strcat.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strchr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strchr_free.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strcmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strdel.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strdup.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strjoin.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strjoin_free.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strlen.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strncmp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strnew.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strpush.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_strsub.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_sym_del.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_toupper.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/ft_utoa.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/get_bits.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/get_flags.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/get_fs.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/get_precision.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/get_size.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/get_type.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/get_width.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/iterators.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/lf_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/o_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/overflow_handle.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/p_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/parse.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/pos_pow.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/pr_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/precision_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/prepare.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/prepare_flags.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/prepare_precision.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/prepare_size.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/process_fs.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/queue_create.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/queue_destroy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/queue_is_empty.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/queue_len.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/queue_pop.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/queue_push.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/round.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/s_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/sign_ops.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/store.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_at.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_create_custstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_create_size.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_create_str.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_custjoin.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_cut.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_destroy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_forward.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_len.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_print.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_push_cs.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_pushchar.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_pushstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_resize.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/str_rev.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/swap_comp_str.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/to_cstr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/u_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/width_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libftprintf/objects/x_handler.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker" beforeDir="false" afterPath="$PROJECT_DIR$/checker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker.c" beforeDir="false" afterPath="$PROJECT_DIR$/checker.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checker.dSYM/Contents/Resources/DWARF/checker" beforeDir="false" afterPath="$PROJECT_DIR$/checker.dSYM/Contents/Resources/DWARF/checker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_memcpy.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_memcpy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/checker.o" beforeDir="false" afterPath="$PROJECT_DIR$/objects/checker.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects/validate.o" beforeDir="false" afterPath="$PROJECT_DIR$/objects/validate.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/push_swap" beforeDir="false" afterPath="$PROJECT_DIR$/push_swap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validate.c" beforeDir="false" afterPath="$PROJECT_DIR$/validate.c" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="204" column="14" selection-start-line="204" selection-start-column="14" selection-end-line="204" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/checker.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="119" column="9" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/validate.c" />
+        <option value="$PROJECT_DIR$/ft_memcpy.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/checker.c" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+        <option value="$PROJECT_DIR$/.idea/tools/External Tools.xml" />
+        <option value="$PROJECT_DIR$/.idea/customTargets.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="580" />
+    <option name="y" value="191" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="push_swap" type="b2602c69:ProjectViewProjectNode" />
+              <item name="push_swap" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="CLionExternalConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Custom Build Application.checker">
+    <configuration name="checker" type="CLionExternalRunConfiguration" factoryName="Application" PROGRAM_PARAMS="3 7 6" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="push_swap" TARGET_NAME="push_swap" CONFIG_NAME="push_swap" RUN_PATH="$PROJECT_DIR$/checker">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="push_swap" type="CLionExternalRunConfiguration" factoryName="Application" PROGRAM_PARAMS="3 2 1" PASS_PARENT_ENVS_2="true" PROJECT_NAME="push_swap" TARGET_NAME="push_swap" CONFIG_NAME="push_swap" RUN_PATH="$PROJECT_DIR$/push_swap">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Custom Build Application.checker" />
+      <item itemvalue="Custom Build Application.push_swap" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e8832e5-2462-4699-8e1b-1ee60c44069a" name="Default Changelist" comment="" />
+      <created>1559905642449</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559905642449</updated>
+      <workItem from="1559905644365" duration="58000" />
+      <workItem from="1559905815316" duration="82000" />
+      <workItem from="1559905898441" duration="1373000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1513000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2560" height="1337" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10087371" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" sideWeight="0.4992057" weight="0.32931727" />
+      <window_info anchor="bottom" id="CMake" sideWeight="0.49960285" weight="0.32931727" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32931727" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.19919679" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32931727" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32931727" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49960285" visible="true" weight="0.30522087" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007943" side_tool="true" weight="0.32931727" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/push_swap.c</url>
+          <line>33</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ft_lstadd_at_tail.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sort_pos.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validate.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/count_ops.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-438" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ft_memcpy.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ft_strtoll.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_data_at.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_flag.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_node.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_pos_by_sortpos.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_neighb_by_pos.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_count.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="204" column="14" selection-start-line="204" selection-start-column="14" selection-end-line="204" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/push_swap.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checker.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="119" column="9" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
