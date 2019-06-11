@@ -60,7 +60,8 @@ int				ft_isnum(char *str)
 	num = ft_strtoll(str);
 	if (!ft_isdigit(str[0]) && len == 1)
 		return (0);
-	i = ft_count_digits(num) + (num < 0 || (str[0] == '+' && ft_isdigit(str[1])) ? 1 : 0);
+	i = ft_count_digits(num) + (num < 0 ||
+	(str[0] == '+' && ft_isdigit(str[1])) ? 1 : 0);
 	if (i != len)
 		return (0);
 	return (1);
